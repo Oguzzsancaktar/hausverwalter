@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { PlusMaterial, colorPalette, svgIcons, text16Medium, text17Medium, text18Medium, text20Bold, text50Bold, text72Bold } from '@/constants'
+import { MaterialPlus, colorPalette, svgIcons, text16Medium, text17Medium, text18Medium, text20Bold, text50Bold, text72Bold } from '@/constants'
 import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography, colors } from '@mui/material'
 import Image from 'next/image'
 import { map } from 'lodash'
@@ -13,17 +13,17 @@ const FeaturesData = [
     descriptiom: 'Finden Sie schnell und unkompliziert lokale Hausverwalter, ohne aufwendige Recherchen oder persönliche Treffen.',
   },
   {
-    icon: svgIcons.clockUp,
+    icon: svgIcons.documentCheck,
     title: 'Transparenz',
     descriptiom: 'Alle angebotenen Dienstleistungen und Preise werden transparent dargestellt, so dass Sie immer den Überblick behalten.',
   },
   {
-    icon: svgIcons.clockUp,
+    icon: svgIcons.peoples,
     title: 'Flexibilität',
     descriptiom: 'Bevor Sie eine Firma beauftragen, haben Sie die Möglichkeit, unsere Partner kennenzulernen. Finden Sie den passenden Experte für Ihren Job.',
   },
   {
-    icon: svgIcons.clockUp,
+    icon: svgIcons.verified,
     title: 'Qualitätssicherung',
     descriptiom: 'Wir arbeiten mit qualifizierten und zertifizierten Hausverwaltern zusammen, um Ihnen die bestmögliche Qualität zu garantieren.',
   },
@@ -64,7 +64,7 @@ const FeaturesView = () => {
             Ihre <span style={{ color: colorPalette.blue }}> Vorteile </span> Im Überblick
           </Typography>
         </Box>
-        <Image src={PlusMaterial} alt="Home Illustration" width={150} height={170} className="absolute right-0" />
+        <Image src={MaterialPlus} alt="Home Illustration" width={150} height={170} className="absolute right-0" />
 
         <Grid container className="d-flex flex-row justify-between " width={'100%'} height={'400px'}>
           {map(FeaturesData, (item, index) => (

@@ -5,6 +5,11 @@ export const text16Medium: CSSProperties = {
   lineHeight: '26px',
   fontWeight: 'normal',
 }
+export const text16Medium19: CSSProperties = {
+  fontSize: '16px',
+  lineHeight: '19px',
+  fontWeight: 'normal',
+}
 
 export const text17Medium: CSSProperties = {
   fontSize: '17px',

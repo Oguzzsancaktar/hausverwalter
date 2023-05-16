@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { HomeIllustration, colorPalette, text17Medium, text18Medium, text20Bold, text72Bold } from '@/constants'
+import { IllustrationHome, colorPalette, text17Medium, text18Medium, text20Bold, text72Bold } from '@/constants'
 import { Box, Button, Container, Typography } from '@mui/material'
 import Image from 'next/image'
 
@@ -74,7 +74,7 @@ const WelcomeView = () => {
         </Box>
 
         <Box>
-          <Image src={HomeIllustration} alt="Home Illustration" />
+          <Image src={IllustrationHome} alt="Home Illustration" />
         </Box>
       </Container>
     </div>

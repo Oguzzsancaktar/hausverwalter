@@ -1,3 +1,11 @@
 export const LogoHausverwalter = require('../../public/assets/images/shared/logo-hauseverwalter.svg')
-export const HomeIllustration = require('../../public/assets/images/shared/illustration-home.svg')
-export const PlusMaterial = require('../../public/assets/images/shared/material-background-plus.svg')
+export const IllustrationHome = require('../../public/assets/images/shared/illustration-home.svg')
+export const MaterialPlus = require('../../public/assets/images/shared/material-background-plus.svg')
+export const MaterialWavedLine = require('../../public/assets/images/shared/material-waved-line.svg')
+
+export const ServiceAdministration = require('../../public/assets/images/services/service-administration-image.png')
+export const ServiceBroker = require('../../public/assets/images/services/service-broker-image.png')
+export const ServiceCommercialAdministration = require('../../public/assets/images/services/service-commercialAdministrations-image.png')
+export const ServiceConcierge = require('../../public/assets/images/services/service-concierge-image.png')
+export const ServiceRentalManagement = require('../../public/assets/images/services/service-rentalManagement-image.png')
+export const ServiceSpecialPropertyManagement = require('../../public/assets/images/services/service-specialPropertyManagement-image.png')
