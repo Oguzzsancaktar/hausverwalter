@@ -1,4 +1,4 @@
-import { LogoHausverwalter, svgIcons, text18Medium22, text21Bold } from '@/constants'
+import { LogoHausverwalter, svgIcons, text16Medium17, text18Medium22, text21Bold } from '@/constants'
 import { map } from 'lodash'
 import Image from 'next/image'
 import React from 'react'
@@ -87,7 +87,7 @@ const Footer = () => {
         </div>
 
         <div className="py-10 sm:flex sm:items-center sm:justify-center">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+          <span className=" sm:text-center text-purple3" style={text16Medium17}>
             © 2023 | realisiert von{' '}
             <a href="https://dotnet-consulting.de/" className="hover:underline">
               Dotnet Consulting GmbH

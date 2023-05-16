@@ -1,5 +1,11 @@
 import { CSSProperties } from 'react'
 
+export const text16Medium17: CSSProperties = {
+  fontSize: '16px',
+  lineHeight: '17px',
+  fontWeight: 'normal',
+}
+
 export const text16Medium: CSSProperties = {
   fontSize: '16px',
   lineHeight: '26px',
