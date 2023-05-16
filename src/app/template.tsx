@@ -1,7 +1,9 @@
 import React from 'react'
 
-const Template = () => {
-  return <div>Loading...</div>
+interface IProps {
+  children: React.ReactNode
 }
-
+const Template: React.FC<IProps> = ({ children }) => {
+  return <div>{children}</div>
+}
 export default Template
