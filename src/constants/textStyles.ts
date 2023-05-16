@@ -23,6 +23,18 @@ export const text18Medium: CSSProperties = {
   fontWeight: 'normal',
 }
 
+export const text18Medium22: CSSProperties = {
+  fontSize: '18px',
+  lineHeight: '22px',
+  fontWeight: 'normal',
+}
+
+export const text21Bold: CSSProperties = {
+  fontSize: '21px',
+  lineHeight: '26px',
+  fontWeight: 700,
+}
+
 export const text20Bold: CSSProperties = {
   fontSize: '20px',
   lineHeight: '30px',
