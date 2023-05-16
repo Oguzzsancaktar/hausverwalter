@@ -2,6 +2,7 @@ export const LogoHausverwalter = require('../../public/assets/images/shared/logo
 export const IllustrationHome = require('../../public/assets/images/shared/illustration-home.svg')
 export const MaterialPlus = require('../../public/assets/images/shared/material-background-plus.svg')
 export const MaterialWavedLine = require('../../public/assets/images/shared/material-waved-line.svg')
+export const WizzardImage = require('../../public/assets/images/shared/wizzard-image.png')
 
 export const ServiceAdministration = require('../../public/assets/images/services/service-administration-image.png')
 export const ServiceBroker = require('../../public/assets/images/services/service-broker-image.png')

@@ -1,3 +1,4 @@
+import { ContactView, WizzardView } from '@/views'
 import dynamic from 'next/dynamic'
 
 const WelcomeView = dynamic(() => import('../views/home/WelcomeView'), { ssr: false })
@@ -10,6 +11,8 @@ export default function Home() {
       <WelcomeView />
       <FeaturesView />
       <ServicesView />
+      <WizzardView />
+      <ContactView />
     </main>
   )
 }

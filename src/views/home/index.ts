@@ -1,3 +1,5 @@
-export { default as WelcomeView } from './WelcomeView'
+export { default as ContactView } from './ContactView'
 export { default as FeaturesView } from './FeaturesView'
 export { default as ServicesView } from './ServicesView'
+export { default as WelcomeView } from './WelcomeView'
+export { default as WizzardView } from './WizzardView'

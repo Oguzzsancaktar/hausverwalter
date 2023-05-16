@@ -9,17 +9,15 @@ import Typography from '@mui/material/Typography'
 import Menu from '@mui/material/Menu'
 import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
-import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
-import AdbIcon from '@mui/icons-material/Adb'
 import Image from 'next/image'
-import { LogoHausverwalter, colorPalette, text17Medium } from '@/constants'
+import { LogoHausverwalter, colorPalette, svgIcons, text17Medium } from '@/constants'
 
 const Navbar = () => {
   const pages = ['Startseite', 'Ratgeber', 'Partner', 'Über uns']
-  const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
+  const settings = ['EN', 'TR', 'FR', 'ES']
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null)
@@ -115,7 +113,7 @@ const Navbar = () => {
               ))}
             </Box>
 
-            <Button color="inherit" style={{ backgroundColor: colorPalette.olive, height: 40, width: 180 }}>
+            <Button color="inherit" style={{ backgroundColor: colorPalette.blue, height: 40, width: 180 }}>
               <Typography
                 variant="h3"
                 noWrap
@@ -135,9 +133,9 @@ const Navbar = () => {
             </Button>
 
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
+              <IconButton className="ml-2" style={text17Medium} onClick={handleOpenUserMenu} sx={{ p: 0, color: colorPalette.black2 }}>
                 DE
+                <Image className="ml-[3px]" src={svgIcons.chevronDown} alt="chevron down" width={10} height={10} />
               </IconButton>
             </Tooltip>
             <Menu

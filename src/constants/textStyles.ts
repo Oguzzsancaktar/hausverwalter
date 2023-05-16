@@ -34,6 +34,11 @@ export const text18Medium22: CSSProperties = {
   lineHeight: '22px',
   fontWeight: 'normal',
 }
+export const text20Bold: CSSProperties = {
+  fontSize: '20px',
+  lineHeight: '30px',
+  fontWeight: 700,
+}
 
 export const text21Bold: CSSProperties = {
   fontSize: '21px',
@@ -41,10 +46,15 @@ export const text21Bold: CSSProperties = {
   fontWeight: 700,
 }
 
-export const text20Bold: CSSProperties = {
-  fontSize: '20px',
-  lineHeight: '30px',
-  fontWeight: 700,
+export const text33SemiBold50: CSSProperties = {
+  fontSize: '33px',
+  lineHeight: '50px',
+  fontWeight: 600,
+}
+export const text40SemiBold50: CSSProperties = {
+  fontSize: '40px',
+  lineHeight: '50px',
+  fontWeight: 600,
 }
 
 export const text50Bold: CSSProperties = {
