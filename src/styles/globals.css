@@ -4,16 +4,48 @@
 
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --black: #000000,
+  --black1: #080809,
+  --black2: #212832,
+
+  --white3: #E5E5E5,
+  --white2: #F7F7F7,
+  --white1: #F8F8F8,
+  --white: #FFFFFF,
+
+  --purple: #14183E,
+  --purple1: #39425D,
+  --purple2: #4E4E73,
+  --purple3: #5E6282,
+
+  --blue: #0179C0,
+  --blueDark: #012269,
+  --blueLight: #EFF8FF,
+
+  --olive: #969E03,
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --black: #000000,
+    --black1: #080809,
+    --black2: #212832,
+  
+    --white3: #E5E5E5,
+    --white2: #F7F7F7,
+    --white1: #F8F8F8,
+    --white: #FFFFFF,
+  
+    --purple: #14183E,
+    --purple1: #39425D,
+    --purple2: #4E4E73,
+    --purple3: #5E6282,
+  
+    --blue: #0179C0,
+    --blueDark: #012269,
+    --blueLight: #EFF8FF,
+  
+    --olive: #969E03,
   }
 }
 
@@ -22,7 +54,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  
  font-family: "Poppins",sans-serif;
 }
