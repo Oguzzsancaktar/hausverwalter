@@ -5,7 +5,10 @@ import { IllustrationHome, colorPalette, text17Medium, text18Medium, text20Bold,
 import { Box, Button, Container, Typography } from '@mui/material'
 import Image from 'next/image'
 
-const WelcomeView = () => {
+interface IProps {
+  openModal: () => void
+}
+const WelcomeView: React.FC<IProps> = ({ openModal }) => {
   return (
     <div className="min-h-screen min-w-screen  bg-welcome bg-cover bg-center flex flex-row items-center justify-start">
       <Container maxWidth="lg" className="flex flex-row h-auto justify-between items-center" style={{ display: 'flex' }}>
@@ -53,7 +56,7 @@ const WelcomeView = () => {
             Optimale Bewirtschaftung Ihrer Immobilie mit erfahrenen Experten. Kostenbewusst, effektiv und transparent.
           </Typography>
 
-          <Button color="inherit" style={{ backgroundColor: colorPalette.olive, height: 60, width: 350, marginTop: '50px' }}>
+          <Button onClick={openModal} color="inherit" style={{ backgroundColor: colorPalette.olive, height: 60, width: 350, marginTop: '50px' }}>
             <Typography
               variant="h3"
               noWrap

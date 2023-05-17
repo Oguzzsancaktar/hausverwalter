@@ -19,17 +19,17 @@ const StepsData = [
   {
     title: '3. Ihre Entscheidung',
     description:
-      'Sie erhalten nach einem Erstgespräch ein zeitnahes Angebot. Dieses Angebot beinhaltet die Leistungen, die Sie für Ihre Immobilie benötigen. Sie können sich dann in Ruhe entscheiden, ob Sie mit uns zusammenarbeiten möchten. Wir freuen uns auf Sie!',
+      'Sie e erhalten nach einem Erstgespräch ein zeitnahes Angebot. Dieses Angebot beinhaltet die Leistungen, die Sie für Ihre Immobilie benötigen. Sie können sich dann in Ruhe entscheiden, ob Sie mit uns zusammenarbeiten möchten. Wir freuen uns auf Sie!',
   },
   {
     title: '4. Ihre Entscheidung',
     description:
-      'Sie erhalten nach einem Erstgespräch ein zeitnahes Angebot. Dieses Angebot beinhaltet die Leistungen, die Sie für Ihre Immobilie benötigen. Sie können sich dann in Ruhe entscheiden, ob Sie mit uns zusammenarbeiten möchten. Wir freuen uns auf Sie!',
+      ' Dieses Angebot beinhaltet die Leistungen, die Sie für Ihre Immobilie benötigen. Sie können sich dann in Ruhe entscheiden, ob Sie mit uns zusammenarbeiten möchten. Wir freuen uns auf Sie!',
   },
   {
     title: '5. Ihre Entscheidung',
     description:
-      'Sie erhalten nach einem Erstgespräch ein zeitnahes Angebot. Dieses Angebot beinhaltet die Leistungen, die Sie für Ihre Immobilie benötigen. Sie können sich dann in Ruhe entscheiden, ob Sie mit uns zusammenarbeiten möchten. Wir freuen uns auf Sie!',
+      'Sie erhalten nach einem Erstgespräch ein zeitnahes Angebot. Dieses Angebot beinhaltet die Leistungen, die Sie für Ihre Immobilie benötigen. Sie können sich dann in Ruhe entscheiden, ob Sie mit uns !',
   },
 ]
 const ExplainationWizzard = () => {
@@ -39,7 +39,7 @@ const ExplainationWizzard = () => {
     <Box>
       <Grid container width={'100%'} className="flex justify-between items-center">
         {map(StepsData, (item, index) => (
-          <Grid item className="relative">
+          <Grid item className="relative" key={index}>
             {index + 1 !== StepsData.length && <span className="w-[50px] h-[1px] border-dotted border-b-0 border-r-0 border-l-0 border-t-2  border-purple3 absolute top-1/2 right-[-60px]"></span>}
 
             <Button
@@ -88,25 +88,6 @@ const ExplainationWizzard = () => {
           {StepsData[selectedStep].description}
         </Typography>
       </Box>
-
-      <Button color="inherit" style={{ backgroundColor: colorPalette.olive, height: 60, width: 350, marginTop: '50px' }}>
-        <Typography
-          variant="h3"
-          noWrap
-          component="p"
-          sx={{
-            ...text17Medium,
-            marginX: 'auto',
-
-            flexGrow: 1,
-            color: colorPalette.white,
-            textDecoration: 'none',
-            textTransform: 'capitalize',
-          }}
-        >
-          Jetzt Hausverwalter finden
-        </Typography>
-      </Button>
     </Box>
   )
 }

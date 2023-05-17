@@ -38,7 +38,7 @@ const Navbar = () => {
   }
 
   return (
-    <AppBar position="fixed" style={{ top: 40, boxShadow: 'none' }} color="transparent">
+    <AppBar className="bg-white1" position="fixed" style={{ paddingTop: 40, paddingBottom: 40, boxShadow: 'none' }} color="transparent">
       <Container maxWidth="lg">
         <Toolbar disableGutters style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

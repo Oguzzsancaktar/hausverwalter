@@ -96,7 +96,7 @@ const ServicesView = () => {
 
         <Grid container gap={10} className="d-flex flex-row justify-between " width={'100%'}>
           {map(ServicesData, (item, index) => (
-            <Grid item height={'350px'} className="relative group">
+            <Grid item height={'350px'} className="relative group" key={index}>
               <Card
                 className="z-20 p-0"
                 sx={{
