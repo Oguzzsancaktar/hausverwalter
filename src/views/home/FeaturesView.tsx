@@ -70,7 +70,7 @@ const FeaturesView: React.FC<IProps> = ({ openModal }) => {
 
         <Grid container className="d-flex flex-row justify-between " width={'100%'} height={'400px'}>
           {map(FeaturesData, (item, index) => (
-            <Grid item spacing={2} height={'100%'} className="relative group">
+            <Grid key={index} item spacing={2} height={'100%'} className="relative group">
               <Card
                 className="z-20"
                 sx={{

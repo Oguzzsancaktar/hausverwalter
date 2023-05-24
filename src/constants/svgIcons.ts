@@ -1,3 +1,4 @@
+const arrowLeft = require('../../public/assets/icons/icon-arrow-left.svg')
 const chevronDown = require('../../public/assets/icons/icon-chevron-down.svg')
 const chevronUp = require('../../public/assets/icons/icon-chevron-up.svg')
 const clockUp = require('../../public/assets/icons/icon-clock-up.svg')
@@ -10,6 +11,7 @@ const user = require('../../public/assets/icons/icon-user.svg')
 const verified = require('../../public/assets/icons/icon-verified.svg')
 
 export const svgIcons = {
+  arrowLeft,
   chevronDown,
   chevronUp,
   clockUp,

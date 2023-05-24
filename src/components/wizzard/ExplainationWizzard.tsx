@@ -3,7 +3,7 @@
 import React from 'react'
 import { Box, Button, Grid, Typography } from '@mui/material'
 import { map } from 'lodash'
-import { colorPalette, text16Medium, text17Medium, text20Bold } from '@/constants'
+import { colorPalette, text16Medium, text20Bold } from '@/constants'
 
 const StepsData = [
   {

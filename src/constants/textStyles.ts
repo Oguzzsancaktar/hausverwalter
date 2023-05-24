@@ -1,5 +1,11 @@
 import { CSSProperties } from 'react'
 
+export const text11Medium17: CSSProperties = {
+  fontSize: '11px',
+  lineHeight: '17px',
+  fontWeight: 'normal',
+}
+
 export const text16Medium17: CSSProperties = {
   fontSize: '16px',
   lineHeight: '17px',
@@ -15,6 +21,12 @@ export const text16Medium19: CSSProperties = {
   fontSize: '16px',
   lineHeight: '19px',
   fontWeight: 'normal',
+}
+
+export const text16Bold25: CSSProperties = {
+  fontSize: '16px',
+  lineHeight: '25px',
+  fontWeight: 700,
 }
 
 export const text17Medium: CSSProperties = {
