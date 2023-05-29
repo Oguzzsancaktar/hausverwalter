@@ -5,10 +5,10 @@ import { IPersonalData } from '@/context'
 
 interface IProps {
   handleStepChange: (type: 'next' | 'prev') => void
-  closeModal: () => void
+  closeModal?: () => void
 }
 
-const EnterPersonalData: React.FC<IProps> = ({ closeModal }) => {
+const EnterPersonalData: React.FC<IProps> = ({ closeModal, handleStepChange }) => {
   const [personalData, setPostcode] = useState<IPersonalData>({
     firstName: '',
     lastName: '',
@@ -146,7 +146,7 @@ const EnterPersonalData: React.FC<IProps> = ({ closeModal }) => {
       </Box>
 
       <Box className="my-10">
-        <Button className="h-[40px] w-[130px] min-w-0 bg-olive capitalize rounded-[6px] border-2 border-olive border-solid text-white" onClick={() => closeModal()}>
+        <Button className="h-[40px] w-[130px] min-w-0 bg-olive capitalize rounded-[6px] border-2 border-olive border-solid text-white" onClick={() => closeModal && closeModal()}>
           Absenden
         </Button>
       </Box>

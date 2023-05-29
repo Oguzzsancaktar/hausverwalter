@@ -12,7 +12,7 @@ enum EReducerActionKind {
 
 interface IReducerAction {
   type: EReducerActionKind
-  payload?: number | IRentalFeatures
+  payload?: number | IRentalFeatures | IPersonalData
 }
 
 export interface IPersonalData {
@@ -32,7 +32,7 @@ interface ISubmitRentalState {
   features: IRentalFeatures
   administrationTime: number | null
   postCode: number | null
-  personalData: IPersonalData | null
+  personalData: IPersonalData
 }
 
 interface ISubmitRentalApi {
@@ -54,7 +54,12 @@ const initialState: ISubmitRentalState = {
   },
   administrationTime: null,
   postCode: null,
-  personalData: null,
+  personalData: {
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+  },
 }
 
 const initialApi: ISubmitRentalApi = {
@@ -121,7 +126,7 @@ const reducer = (state: ISubmitRentalState, action: IReducerAction): ISubmitRent
     case EReducerActionKind.SET_PERSONAL_DATA:
       return {
         ...state,
-        personalData: payload as IPersonalData,
+        personalData: payload as unknown as IPersonalData,
       }
 
     case EReducerActionKind.RESET:
