@@ -50,8 +50,8 @@ const TestimonialsView: React.FC<IProps> = ({}) => {
 
   return (
     <div className="py-32 min-w-screen bg-white1  bg-cover bg-center flex flex-row items-center justify-start ">
-      <Container maxWidth="lg" className="flex flex-row h-auto relative  justify-between" style={{ display: 'flex' }}>
-        <Box className="pt-[30px] ">
+      <Container maxWidth="lg" className="flex flex-row h-auto relative  justify-between medium:flex-col" style={{ display: 'flex' }}>
+        <Box className="pt-[30px] medium:pb-6">
           <Typography
             variant="h3"
             component="p"

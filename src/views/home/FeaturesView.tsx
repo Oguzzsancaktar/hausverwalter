@@ -68,7 +68,7 @@ const FeaturesView: React.FC<IProps> = ({ openModal }) => {
         </Box>
         <Image src={MaterialPlus} alt="Home Illustration" width={150} height={170} className="absolute right-0" />
 
-        <Grid container className="d-flex flex-row justify-between " width={'100%'} height={'400px'}>
+        <Grid container className="d-flex flex-row justify-center items-center " width={'100%'} height={'auto'}>
           {map(FeaturesData, (item, index) => (
             <Grid key={index} item spacing={2} height={'100%'} className="relative group">
               <Card

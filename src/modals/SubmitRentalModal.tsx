@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import { LogoHausverwalter, colorPalette, svgIcons, text16Medium17, text17Medium } from '@/constants'
+import { LogoHausverwalter, colorPalette, svgIcons, text17Medium } from '@/constants'
 import { HighlightOff } from '@mui/icons-material'
 import { Box, Button, Typography } from '@mui/material'
 import Image from 'next/image'

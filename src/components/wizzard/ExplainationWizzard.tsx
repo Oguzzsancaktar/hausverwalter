@@ -60,10 +60,9 @@ const ExplainationWizzard = () => {
         <Typography
           variant="h2"
           component="p"
-          className="my-5"
+          className="my-5 max-w-[500px] medium:max-w-none"
           sx={{
             ...text16Medium,
-            maxWidth: '550px',
             flexGrow: 1,
             fontWeight: 700,
             color: colorPalette.purple3,
@@ -76,10 +75,9 @@ const ExplainationWizzard = () => {
         <Typography
           variant="h4"
           component="p"
-          className="my-5"
+          className="my-5 max-w-[500px] medium:max-w-none medium:text-center"
           sx={{
             ...text16Medium,
-            maxWidth: '550px',
             flexGrow: 1,
             color: colorPalette.purple3,
             textAlign: 'start',

@@ -15,6 +15,7 @@ const WizzardView: React.FC<IProps> = ({ openModal }) => {
           <Typography
             variant="h3"
             component="p"
+            className="medium:text-center"
             sx={{
               ...text18Medium,
               maxWidth: '850px',
@@ -29,7 +30,7 @@ const WizzardView: React.FC<IProps> = ({ openModal }) => {
           <Typography
             variant="h3"
             component="p"
-            className="my-5"
+            className="my-5 medium:text-center medium:mx-auto"
             sx={{
               ...text40SemiBold50,
               maxWidth: '550px',
@@ -44,16 +45,16 @@ const WizzardView: React.FC<IProps> = ({ openModal }) => {
         </Box>
 
         <Grid container className="flex flex-row items-center">
-          <Grid item xs={12} md={6} lg={4} className="mr-[100px]">
+          <Grid item xs={12} md={6} lg={4} className="mr-[100px] medium:mx-auto medium:mb-20">
             <Box className="flex flex-col items-center justify-center p-5 bg-white rounded-3xl shadow-lg">
               <Image src={WizzardImage} alt="Wizzard Image" />
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={0} lg={6}>
+          <Grid item xs={12} md={0} lg={6} className="medium:flex medium:flex-col medium:items-center">
             <ExplainationWizzard />
 
-            <Button onClick={openModal} color="inherit" style={{ backgroundColor: colorPalette.olive, height: 60, width: 350, marginTop: '50px' }}>
+            <Button onClick={openModal} color="inherit" className="mx-auto" style={{ backgroundColor: colorPalette.olive, height: 60, width: 350, marginTop: '50px' }}>
               <Typography
                 variant="h3"
                 noWrap

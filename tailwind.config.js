@@ -31,6 +31,10 @@ module.exports = {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         welcome: "url('/assets/images/shared/material-welcome-background.svg')",
       },
+      screens: {
+        small: { max: '650px' },
+        medium: { max: '992px' },
+      },
     },
   },
   plugins: [],

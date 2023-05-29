@@ -7,10 +7,10 @@ import Image from 'next/image'
 
 const ContactView = () => {
   return (
-    <div className="py-10 min-w-screen bg-white1 flex-row items-center justify-center pb-20">
+    <div className="py-10 px-10 min-w-screen bg-white1 flex-row items-center justify-center pb-20">
       <Container
         maxWidth="lg"
-        className="py-[50px] px-[150px] flex flex-col h-auto justify-between items-center relative bg-blueLight  rounded-tl-[100px] rounded-br-[40px] "
+        className="py-[50px] px-[150px] medium:p-5 flex flex-col h-auto justify-between items-center relative bg-blueLight  rounded-tl-[100px] rounded-br-[40px] "
         style={{ display: 'flex' }}
       >
         <Box className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2" width={70} height={70}>
@@ -50,10 +50,10 @@ const ContactView = () => {
         </Box>
 
         <Box className="w-full max-w-[630px]">
-          <Grid gap={10} spacing={10}>
-            <FormControl variant="standard">
+          <Grid className="w-full block">
+            <FormControl variant="standard" className="mr-5 w-[calc((100%-1.25rem)/2)]">
               <OutlinedInput
-                className="bg-white h-[60px] px-[20px] rounded-[10px] w-[300px] mr-5"
+                className="bg-white h-[60px] px-[20px] rounded-[10px]w-full "
                 style={{ outline: 'none' }}
                 placeholder="Name, Nachname"
                 classes={{ notchedOutline: '!border-none !outline-none' }}
@@ -65,9 +65,9 @@ const ContactView = () => {
               />
             </FormControl>
 
-            <FormControl variant="standard">
+            <FormControl variant="standard" className="w-[calc((100%-1.25rem)/2)]">
               <OutlinedInput
-                className="bg-white h-[60px] px-[20px] rounded-[10px] w-[300px]"
+                className="bg-white h-[60px]  rounded-[10px] w-full"
                 style={{ outline: 'none' }}
                 placeholder="Betreff"
                 classes={{ notchedOutline: '!border-none !outline-none' }}
@@ -81,7 +81,7 @@ const ContactView = () => {
           </Grid>
 
           <Grid className="w-full mt-5">
-            <FormControl variant="standard" className=" w-[calc(100%-180px-60px)] mr-5">
+            <FormControl variant="standard" className=" w-[calc(100%-180px-1.25rem)] mr-5">
               <OutlinedInput
                 className="bg-white h-[60px] px-[20px] rounded-[10px] w-full "
                 style={{ outline: 'none' }}

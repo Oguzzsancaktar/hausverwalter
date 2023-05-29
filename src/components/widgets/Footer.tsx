@@ -26,21 +26,21 @@ const FooterData = [
 const Footer = () => {
   return (
     <footer className="bg-white1">
-      <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8 ">
-        <div className="flex justify-between mb-5">
-          <div className="mb-6 md:mb-0">
-            <Image src={LogoHausverwalter} alt="Hausverwalter Logo" />
+      <div className="mx-auto w-full max-w-screen-xl p-4 py-6 medium:py-8 ">
+        <div className="flex justify-between mb-5 medium:flex-col ">
+          <div className="mb-6 md:mb-0 pr-5  medium:pb-10 medium:pr-0 ">
+            <Image src={LogoHausverwalter} alt="Hausverwalter Logo" className="medium:mx-auto" />
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div className="flex  gap-8 medium:gap-6 medium:grid-cols-3 medium:flex medium:items-center medium:justify-center small:flex-col">
             {map(FooterData, (item, index) => (
-              <div key={index}>
-                <h2 className="mb-6 text-sm font-semibold text-black1" style={text21Bold}>
+              <div key={index} className="medium:min-w-[200px] ">
+                <h2 className="mb-6 text-sm font-semibold text-black1 medium:text-center" style={text21Bold}>
                   {item.title}
                 </h2>
                 <ul className="text-purple3 font-medium">
                   {map(item.links, (link, index) => (
                     <li className="mb-4" key={index}>
-                      <a href="#" className="hover:underline" style={text18Medium22}>
+                      <a href="#" className="hover:underline medium:text-center medium:w-full medium:block" style={text18Medium22}>
                         {link}
                       </a>
                     </li>
@@ -50,8 +50,8 @@ const Footer = () => {
             ))}
           </div>
 
-          <div className="flex flex-col items-start justify-start">
-            <div className="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+          <div className="flex flex-col items-start justify-start medium:w-fit medium:mx-auto medium:pt-10">
+            <div className="flex mt-4 space-x-6 medium:justify-center medium:mt-0 justify-center medium:mx-auto">
               <a href="#" className="text-black1 rounded-full flex items-center justify-center hover:text-gray-900 bg-white w-[40px] h-[40px]">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path
@@ -86,8 +86,8 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="py-10 sm:flex sm:items-center sm:justify-center">
-          <span className=" sm:text-center text-purple3" style={text16Medium17}>
+        <div className="py-10 medium:flex medium:items-center medium:justify-center">
+          <span className=" medium:text-center text-purple3" style={text16Medium17}>
             © 2023 | realisiert von{' '}
             <a href="https://dotnet-consulting.de/" className="hover:underline">
               Dotnet Consulting GmbH

@@ -2,7 +2,6 @@
 
 import React from 'react'
 import {
-  MaterialPlus,
   MaterialWavedLine,
   ServiceAdministration,
   ServiceBroker,
@@ -11,16 +10,12 @@ import {
   ServiceRentalManagement,
   ServiceSpecialPropertyManagement,
   colorPalette,
-  svgIcons,
-  text16Medium,
   text16Medium19,
-  text17Medium,
   text18Medium,
   text20Bold,
   text50Bold,
-  text72Bold,
 } from '@/constants'
-import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography, colors } from '@mui/material'
+import { Box, Card, CardContent, Container, Grid, Typography } from '@mui/material'
 import Image from 'next/image'
 import { map } from 'lodash'
 
@@ -31,13 +26,13 @@ const ServicesData = [
     descriptiom: 'Abrechnung, Instandhaltungs­-betreuung und Verwaltung Ihrer Wohneigentums­gemeinschaft.',
   },
   {
-    image: ServiceBroker,
-    title: 'Gewerbeverwaltung',
+    image: ServiceRentalManagement,
+    title: 'Mietverwaltung',
     descriptiom: 'Mietbuchhaltung, technische, wirtschaftliche Betreuung und vieles mehr.',
   },
   {
     image: ServiceCommercialAdministration,
-    title: 'Flexibilität',
+    title: 'Gewerbeverwaltung',
     descriptiom: 'Büros, Praxen, Ladenlokalen, große oder kleine Lagerhallen und Produktionsstätten',
   },
   {
@@ -46,7 +41,7 @@ const ServicesData = [
     descriptiom: 'Instandhaltung und Pflege, sowie Koordination von Handwerkern und Dienstleistern',
   },
   {
-    image: ServiceRentalManagement,
+    image: ServiceBroker,
     title: 'Makler-Service',
     descriptiom: 'Vermittlung von Immobilien, Beratung bei An- und Verkauf sowie Wertermittlung.',
   },
@@ -92,9 +87,9 @@ const ServicesView = () => {
             Dienstleistungen
           </Typography>
         </Box>
-        <Image src={MaterialWavedLine} alt="Home Illustration" width={100} height={260} className="absolute right-[-45px] top-[400px]" />
+        <Image src={MaterialWavedLine} alt="Home Illustration" width={100} height={260} className="absolute right-[15px] top-[400px]" />
 
-        <Grid container gap={10} className="d-flex flex-row justify-between " width={'100%'}>
+        <Grid container gap={10} className="d-flex flex-row justify-center " width={'100%'}>
           {map(ServicesData, (item, index) => (
             <Grid item height={'350px'} className="relative group" key={index}>
               <Card

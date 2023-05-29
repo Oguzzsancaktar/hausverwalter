@@ -11,11 +11,12 @@ interface IProps {
 const WelcomeView: React.FC<IProps> = ({ openModal }) => {
   return (
     <div className="min-h-screen min-w-screen  bg-welcome bg-cover bg-center flex flex-row items-center justify-start">
-      <Container maxWidth="lg" className="flex flex-row h-auto justify-between items-center" style={{ display: 'flex' }}>
-        <Box className="flex flex-col h-auto w-auto">
+      <Container maxWidth="lg" className="flex flex-row h-auto justify-between items-center medium:flex-col medium:pt-40" style={{ display: 'flex' }}>
+        <Box className="flex flex-col h-auto w-auto pr-10  medium:pb-20">
           <Typography
             variant="h5"
             component={'h5'}
+            className="medium:text-center"
             noWrap
             sx={{
               ...text20Bold,
@@ -38,6 +39,7 @@ const WelcomeView: React.FC<IProps> = ({ openModal }) => {
               flexGrow: 1,
               color: colorPalette.purple,
             }}
+            className="medium:text-5xl medium:text-center"
           >
             Wir verbinden Sie mit den Richtigen Hausverwaltern.
           </Typography>
@@ -45,6 +47,7 @@ const WelcomeView: React.FC<IProps> = ({ openModal }) => {
           <Typography
             variant="h6"
             component="p"
+            className="medium:text-center"
             sx={{
               ...text18Medium,
               maxWidth: '654px',
@@ -56,7 +59,7 @@ const WelcomeView: React.FC<IProps> = ({ openModal }) => {
             Optimale Bewirtschaftung Ihrer Immobilie mit erfahrenen Experten. Kostenbewusst, effektiv und transparent.
           </Typography>
 
-          <Button onClick={openModal} color="inherit" style={{ backgroundColor: colorPalette.olive, height: 60, width: 350, marginTop: '50px' }}>
+          <Button className="mx-auto" onClick={openModal} color="inherit" style={{ backgroundColor: colorPalette.olive, height: 60, width: 350, marginTop: '50px' }}>
             <Typography
               variant="h3"
               noWrap
