@@ -4,7 +4,11 @@ import * as React from 'react'
 import { ContactView, TestimonialsView, WizzardView } from '@/views'
 
 import dynamic from 'next/dynamic'
-import { useSubmitRentalApiContext } from '@/context'
+
+import { CacheProvider } from '@emotion/react'
+import createEmotionCache from '@/utils/createEmotionCache'
+
+const clientSideEmotionCache = createEmotionCache()
 
 const WelcomeView = dynamic(() => import('../views/home/WelcomeView'), { ssr: false })
 const FeaturesView = dynamic(() => import('../views/home/FeaturesView'), { ssr: false })
@@ -12,15 +16,17 @@ const ServicesView = dynamic(() => import('../views/home/ServicesView'), { ssr: 
 
 interface IProps {}
 
-export default function Home({}: IProps) {
+export default function Home({ emotionCache = clientSideEmotionCache }: any) {
   return (
-    <main>
-      <WelcomeView />
-      <FeaturesView />
-      <ServicesView />
-      <WizzardView />
-      <TestimonialsView />
-      <ContactView />
-    </main>
+    <CacheProvider value={emotionCache}>
+      <main>
+        <WelcomeView />
+        <FeaturesView />
+        <ServicesView />
+        <WizzardView />
+        <TestimonialsView />
+        <ContactView />
+      </main>
+    </CacheProvider>
   )
 }

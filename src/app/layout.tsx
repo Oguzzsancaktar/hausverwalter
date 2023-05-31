@@ -17,13 +17,13 @@ import '@fontsource/poppins/900.css'
 import '@/styles/globals.css'
 
 // Libs.
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
 import { ThemeProvider, createTheme, Modal } from '@mui/material'
+
 // Modals.
 import { SubmitRentalModal } from '@/modals'
 import { SubmitRentalContextProvider, useSubmitRentalApiContext, useSubmitRentalStateContext } from '@/context'
-
 const theme = createTheme({
   breakpoints: {
     values: {
@@ -40,6 +40,17 @@ const theme = createTheme({
 })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://embed.tawk.to/647720a674285f0ec46eb197/1h1olf2se'
+    script.async = true
+    document.head.appendChild(script)
+
+    return () => {
+      document.head.removeChild(script)
+    }
+  }, [])
+
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}>
