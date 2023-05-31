@@ -5,6 +5,7 @@ import { MaterialPlus, colorPalette, svgIcons, text16Medium, text17Medium, text1
 import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography, colors } from '@mui/material'
 import Image from 'next/image'
 import { map } from 'lodash'
+import { useSubmitRentalApiContext } from '@/context'
 
 const FeaturesData = [
   {
@@ -28,10 +29,10 @@ const FeaturesData = [
     descriptiom: 'Wir arbeiten mit qualifizierten und zertifizierten Hausverwaltern zusammen, um Ihnen die bestmögliche Qualität zu garantieren.',
   },
 ]
-interface IProps {
-  openModal: () => void
-}
-const FeaturesView: React.FC<IProps> = ({ openModal }) => {
+interface IProps {}
+const FeaturesView: React.FC<IProps> = ({}) => {
+  const { setShowModal } = useSubmitRentalApiContext()
+
   return (
     <div className=" min-w-screen bg-white1  bg-cover bg-center flex flex-row items-center justify-start">
       <Container maxWidth="lg" className="flex flex-col h-auto justify-between items-center relative" style={{ display: 'flex' }}>
@@ -99,7 +100,7 @@ const FeaturesView: React.FC<IProps> = ({ openModal }) => {
           ))}
         </Grid>
 
-        <Button onClick={openModal} color="inherit" style={{ backgroundColor: colorPalette.olive, height: 60, width: 350, marginTop: '100px' }}>
+        <Button onClick={() => setShowModal(true)} color="inherit" style={{ backgroundColor: colorPalette.olive, height: 60, width: 350, marginTop: '100px' }}>
           <Typography
             variant="h3"
             noWrap

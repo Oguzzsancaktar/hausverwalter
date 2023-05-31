@@ -9,6 +9,7 @@ interface IProps {
 }
 
 const EnterPersonalData: React.FC<IProps> = ({ closeModal, handleStepChange }) => {
+  const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(true)
   const [personalData, setPostcode] = useState<IPersonalData>({
     firstName: '',
     lastName: '',
@@ -131,6 +132,7 @@ const EnterPersonalData: React.FC<IProps> = ({ closeModal, handleStepChange }) =
 
         <Box className="mt-[15px] m-0 mx-auto max-w-[400px] flex flex-row h-auto">
           <Checkbox
+            onChange={(x) => setIsButtonDisabled(!x.target.checked)}
             className="mr-[5px]"
             sx={{
               borderRadius: '50%',
@@ -146,7 +148,11 @@ const EnterPersonalData: React.FC<IProps> = ({ closeModal, handleStepChange }) =
       </Box>
 
       <Box className="my-10">
-        <Button className="h-[40px] w-[130px] min-w-0 bg-olive capitalize rounded-[6px] border-2 border-olive border-solid text-white" onClick={() => closeModal && closeModal()}>
+        <Button
+          disabled={isButtonDisabled}
+          className="h-[40px] w-[130px] min-w-0 bg-olive capitalize rounded-[6px] border-2 border-olive border-solid text-white"
+          onClick={() => closeModal && closeModal()}
+        >
           Absenden
         </Button>
       </Box>

@@ -14,8 +14,13 @@ import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import Image from 'next/image'
 import { LogoHausverwalter, colorPalette, svgIcons, text17Medium } from '@/constants'
+import { useSubmitRentalApiContext } from '@/context'
 
-const Navbar = () => {
+interface IProps {}
+
+const Navbar: React.FC<IProps> = () => {
+  const { setShowModal } = useSubmitRentalApiContext()
+
   const pages = ['Startseite', 'Ratgeber', 'Partner', 'Über uns']
   const settings = ['EN', 'TR', 'FR', 'ES']
 
@@ -38,7 +43,7 @@ const Navbar = () => {
   }
 
   return (
-    <AppBar className="bg-white1" position="fixed" style={{ paddingTop: 40, paddingBottom: 40, boxShadow: 'none' }} color="transparent">
+    <AppBar className="bg-white" position="fixed" style={{ paddingTop: 40, paddingBottom: 40, boxShadow: 'none' }} color="transparent">
       <Container maxWidth="lg">
         <Toolbar disableGutters style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <Image width={203} height={56} src={LogoHausverwalter} alt="Hausverwalter Logo" />
@@ -67,12 +72,11 @@ const Navbar = () => {
               ))}
             </Box>
 
-            <Button color="inherit" style={{ backgroundColor: colorPalette.blue, height: 40, width: 180 }}>
+            <Button color="inherit" style={{ backgroundColor: colorPalette.blue, height: 40, width: 180 }} onClick={() => setShowModal(true)}>
               <Typography
                 variant="h3"
                 noWrap
-                component="a"
-                href=""
+                component="h2"
                 sx={{
                   ...text17Medium,
                   marginX: 'auto',

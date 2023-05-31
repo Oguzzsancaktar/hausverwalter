@@ -16,11 +16,13 @@ import '@fontsource/poppins/900.css'
 
 import '@/styles/globals.css'
 
+// Libs.
+import React, { useState } from 'react'
 import dynamic from 'next/dynamic'
-import { ThemeProvider, createTheme } from '@mui/material'
-
-const Navbar = dynamic(() => import('../components/widgets/Navbar'), { ssr: false })
-const Footer = dynamic(() => import('../components/widgets/Footer'), { ssr: false })
+import { ThemeProvider, createTheme, Modal } from '@mui/material'
+// Modals.
+import { SubmitRentalModal } from '@/modals'
+import { SubmitRentalContextProvider, useSubmitRentalApiContext, useSubmitRentalStateContext } from '@/context'
 
 const theme = createTheme({
   breakpoints: {
@@ -42,9 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body suppressHydrationWarning={true}>
         <ThemeProvider theme={theme}>
-          <Navbar />
-          {children}
-          <Footer />
+          <SubmitRentalContextProvider>{children}</SubmitRentalContextProvider>
         </ThemeProvider>
       </body>
     </html>

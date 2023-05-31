@@ -4,10 +4,12 @@ import { Box, Button, Container, Grid, Typography } from '@mui/material'
 import { WizzardImage, colorPalette, text17Medium, text18Medium, text40SemiBold50 } from '@/constants'
 import Image from 'next/image'
 import { ExplainationWizzard } from '@/components'
-interface IProps {
-  openModal: () => void
-}
-const WizzardView: React.FC<IProps> = ({ openModal }) => {
+import { useSubmitRentalApiContext } from '@/context'
+
+interface IProps {}
+const WizzardView: React.FC<IProps> = () => {
+  const { setShowModal } = useSubmitRentalApiContext()
+
   return (
     <div className="py-20 min-w-screen bg-white1  bg-cover bg-center flex flex-row items-center justify-start">
       <Container maxWidth="lg" className="flex flex-col h-auto relative " style={{ display: 'flex' }}>
@@ -54,7 +56,7 @@ const WizzardView: React.FC<IProps> = ({ openModal }) => {
           <Grid item xs={12} md={0} lg={6} className="medium:flex medium:flex-col medium:items-center">
             <ExplainationWizzard />
 
-            <Button onClick={openModal} color="inherit" className="mx-auto" style={{ backgroundColor: colorPalette.olive, height: 60, width: 350, marginTop: '50px' }}>
+            <Button onClick={() => setShowModal(true)} color="inherit" className="mx-auto" style={{ backgroundColor: colorPalette.olive, height: 60, width: 350, marginTop: '50px' }}>
               <Typography
                 variant="h3"
                 noWrap

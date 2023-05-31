@@ -4,15 +4,16 @@ import React from 'react'
 import { IllustrationHome, colorPalette, text17Medium, text18Medium, text20Bold, text72Bold } from '@/constants'
 import { Box, Button, Container, Typography } from '@mui/material'
 import Image from 'next/image'
+import { useSubmitRentalApiContext } from '@/context'
 
-interface IProps {
-  openModal: () => void
-}
-const WelcomeView: React.FC<IProps> = ({ openModal }) => {
+interface IProps {}
+const WelcomeView: React.FC<IProps> = () => {
+  const { setShowModal } = useSubmitRentalApiContext()
+
   return (
     <div className="min-h-screen min-w-screen  bg-welcome bg-cover bg-center flex flex-row items-center justify-start">
       <Container maxWidth="lg" className="flex flex-row h-auto justify-between items-center medium:flex-col medium:pt-40" style={{ display: 'flex' }}>
-        <Box className="flex flex-col h-auto w-auto pr-10  medium:pb-20">
+        <Box className="flex flex-col h-auto w-auto pr-10  medium:pb-20 medium:items-center">
           <Typography
             variant="h5"
             component={'h5'}
@@ -59,7 +60,7 @@ const WelcomeView: React.FC<IProps> = ({ openModal }) => {
             Optimale Bewirtschaftung Ihrer Immobilie mit erfahrenen Experten. Kostenbewusst, effektiv und transparent.
           </Typography>
 
-          <Button className="mx-auto" onClick={openModal} color="inherit" style={{ backgroundColor: colorPalette.olive, height: 60, width: 350, marginTop: '50px' }}>
+          <Button onClick={() => setShowModal(true)} color="inherit" style={{ backgroundColor: colorPalette.olive, height: 60, width: 350, marginTop: '50px' }}>
             <Typography
               variant="h3"
               noWrap

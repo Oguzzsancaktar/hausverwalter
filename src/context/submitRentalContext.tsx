@@ -1,6 +1,9 @@
-import { ReducerAction, createContext, useContext, useMemo, useReducer } from 'react'
+'use client'
+
+import { createContext, useContext, useMemo, useReducer } from 'react'
 
 enum EReducerActionKind {
+  SET_MODAL_SHOW = 'SET_MODAL_SHOW',
   SET_SERVICE_TYPE = 'SET_SERVICE_TYPE',
   SET_BUILDING_TYPE = 'SET_BUILDING_TYPE',
   SET_FEATURES = 'SET_FEATURES',
@@ -12,7 +15,17 @@ enum EReducerActionKind {
 
 interface IReducerAction {
   type: EReducerActionKind
-  payload?: number | IRentalFeatures | IPersonalData
+  payload?: number | boolean | IRentalFeatures | IPersonalData
+}
+
+interface ISubmitRentalState {
+  isModalOpen: boolean
+  serviceType: number | null
+  buildingType: number | null
+  features: IRentalFeatures
+  administrationTime: number | null
+  postCode: number | null
+  personalData: IPersonalData
 }
 
 export interface IPersonalData {
@@ -26,16 +39,8 @@ interface IRentalFeatures {
   minArea: number
 }
 
-interface ISubmitRentalState {
-  serviceType: number | null
-  buildingType: number | null
-  features: IRentalFeatures
-  administrationTime: number | null
-  postCode: number | null
-  personalData: IPersonalData
-}
-
 interface ISubmitRentalApi {
+  setShowModal: (isModalOpen: boolean) => void
   setServiceType: (serviceType: number) => void
   setBuildingType: (buildingType: number) => void
   setFeatures: (features: IRentalFeatures) => void
@@ -46,6 +51,7 @@ interface ISubmitRentalApi {
 }
 
 const initialState: ISubmitRentalState = {
+  isModalOpen: false,
   serviceType: null,
   buildingType: null,
   features: {
@@ -63,6 +69,7 @@ const initialState: ISubmitRentalState = {
 }
 
 const initialApi: ISubmitRentalApi = {
+  setShowModal: () => {},
   setServiceType: () => {},
   setBuildingType: () => {},
   setFeatures: () => {},
@@ -98,6 +105,11 @@ const useSubmitRentalApiContext = () => {
 const reducer = (state: ISubmitRentalState, action: IReducerAction): ISubmitRentalState => {
   const { type, payload } = action
   switch (type) {
+    case EReducerActionKind.SET_MODAL_SHOW:
+      return {
+        ...state,
+        isModalOpen: payload as boolean,
+      }
     case EReducerActionKind.SET_SERVICE_TYPE:
       return {
         ...state,
@@ -145,6 +157,7 @@ const SubmitRentalContextProvider: React.FC<IProps> = ({ children }) => {
 
   const submitRentalApi = useMemo<ISubmitRentalApi>(() => {
     return {
+      setShowModal: (isModalOpen: boolean) => dispatch({ type: EReducerActionKind.SET_MODAL_SHOW, payload: isModalOpen }),
       setServiceType: (serviceType: number) => dispatch({ type: EReducerActionKind.SET_SERVICE_TYPE, payload: serviceType }),
       setBuildingType: (buildingType: number) => dispatch({ type: EReducerActionKind.SET_BUILDING_TYPE, payload: buildingType }),
       setFeatures: (features: IRentalFeatures) => dispatch({ type: EReducerActionKind.SET_FEATURES, payload: features }),
