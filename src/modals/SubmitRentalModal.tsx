@@ -34,7 +34,7 @@ const SubmitRentalModal: React.FC<IProps> = ({ closeModal }) => {
             className="!min-w-0 text-purple"
             style={{ minWidth: 'none' }}
           >
-            <Image src={svgIcons.arrowLeft} alt="Arrow Left" width={15} height={15} />
+            <Image priority src={svgIcons.arrowLeft} alt="Arrow Left" width={15} height={15} />
             <Typography className="!text-purple ml-[10px]" variant="h6" component="h2" sx={{ textAlign: 'center', color: colorPalette.purple, marginLeft: '10px', fontSize: text17Medium }}>
               Zurück
             </Typography>
@@ -48,7 +48,7 @@ const SubmitRentalModal: React.FC<IProps> = ({ closeModal }) => {
         </Button>
       </Box>
 
-      <Image src={LogoHausverwalter} alt="Hausverwalter Logo" className="mx-auto mb-52" />
+      <Image priority src={LogoHausverwalter} alt="Hausverwalter Logo" className="mx-auto mb-52" />
 
       <Box sx={{ height: 'calc(100% - 56px)' }}>
         <SubmitRentalWizzard activeStep={activeStep} setActiveStep={setActiveStep} closeModal={closeModal} />

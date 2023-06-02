@@ -26,10 +26,10 @@ const TestimonialsCarousel: React.FC<IProps> = ({ testimonial, onChevronClick })
       </Card>
       <Box className="flex flex-col ml-10 medium:ml-2 h-20 justify-between">
         <Button onClick={() => onChevronClick('up')}>
-          <Image src={svgIcons.chevronUp} alt="Chevron Up Icon" />
+          <Image priority src={svgIcons.chevronUp} alt="Chevron Up Icon" />
         </Button>
         <Button onClick={() => onChevronClick('down')}>
-          <Image src={svgIcons.chevronDown} alt="Chevron Down Icon" />
+          <Image priority src={svgIcons.chevronDown} alt="Chevron Down Icon" />
         </Button>
       </Box>
     </Box>

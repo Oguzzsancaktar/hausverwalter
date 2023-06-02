@@ -20,6 +20,7 @@ interface IProps {}
 
 const Navbar: React.FC<IProps> = () => {
   const { setShowModal } = useSubmitRentalApiContext()
+  const [navbarBgShow, setNavbarBgShow] = React.useState(false)
 
   const pages = ['Startseite', 'Ratgeber', 'Partner', 'Über uns']
   const settings = ['EN', 'TR', 'FR', 'ES']
@@ -42,11 +43,32 @@ const Navbar: React.FC<IProps> = () => {
     setAnchorElUser(null)
   }
 
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      if (currentScrollY > 0) {
+        setNavbarBgShow(true)
+      } else {
+        setNavbarBgShow(false)
+      }
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <AppBar className="bg-white" position="fixed" style={{ paddingTop: 40, paddingBottom: 40, boxShadow: 'none' }} color="transparent">
+    <AppBar
+      className={!navbarBgShow ? 'transition-all duration-300' : 'transition-all duration-300 bg-white1'}
+      position="fixed"
+      style={{ paddingTop: 40, paddingBottom: 40, boxShadow: 'none' }}
+      color="transparent"
+    >
       <Container maxWidth="lg">
         <Toolbar disableGutters style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Image width={203} height={56} src={LogoHausverwalter} alt="Hausverwalter Logo" />
+          <Image priority width={203} height={56} src={LogoHausverwalter} alt="Hausverwalter Logo" />
 
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
             <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
@@ -93,7 +115,7 @@ const Navbar: React.FC<IProps> = () => {
             <Tooltip title="Open settings">
               <IconButton className="ml-2" style={text17Medium} onClick={handleOpenUserMenu} sx={{ p: 0, color: colorPalette.black2 }}>
                 DE
-                <Image className="ml-[3px]" src={svgIcons.chevronDown} alt="chevron down" width={10} height={10} />
+                <Image priority className="ml-[3px]" src={svgIcons.chevronDown} alt="chevron down" width={10} height={10} />
               </IconButton>
             </Tooltip>
 

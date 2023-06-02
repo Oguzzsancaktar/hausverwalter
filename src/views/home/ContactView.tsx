@@ -14,7 +14,7 @@ const ContactView = () => {
         style={{ display: 'flex' }}
       >
         <Box className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2" width={70} height={70}>
-          <Image src={svgIcons.send} alt="Send Icon" />
+          <Image priority src={svgIcons.send} alt="Send Icon" />
         </Box>
         <Box className="pt-[30px] ">
           <Typography
@@ -59,7 +59,7 @@ const ContactView = () => {
                 classes={{ notchedOutline: '!border-none !outline-none' }}
                 startAdornment={
                   <InputAdornment position="start">
-                    <Image src={svgIcons.user} alt="User Icon" />
+                    <Image priority src={svgIcons.user} alt="User Icon" />
                   </InputAdornment>
                 }
               />
@@ -73,7 +73,7 @@ const ContactView = () => {
                 classes={{ notchedOutline: '!border-none !outline-none' }}
                 startAdornment={
                   <InputAdornment position="start">
-                    <Image src={svgIcons.document} alt="User Icon" />
+                    <Image priority src={svgIcons.document} alt="User Icon" />
                   </InputAdornment>
                 }
               />
@@ -89,7 +89,7 @@ const ContactView = () => {
                 classes={{ notchedOutline: '!border-none !outline-none' }}
                 startAdornment={
                   <InputAdornment position="start">
-                    <Image src={svgIcons.mail} alt="User Icon" />
+                    <Image priority src={svgIcons.mail} alt="User Icon" />
                   </InputAdornment>
                 }
               />

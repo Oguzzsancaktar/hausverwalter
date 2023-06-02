@@ -49,7 +49,7 @@ const WizzardView: React.FC<IProps> = () => {
         <Grid container className="flex flex-row items-center">
           <Grid item xs={12} md={6} lg={4} className="mr-[100px] medium:mx-auto medium:mb-20">
             <Box className="flex flex-col items-center justify-center p-5 bg-white rounded-3xl shadow-lg">
-              <Image src={WizzardImage} alt="Wizzard Image" />
+              <Image priority src={WizzardImage} alt="Wizzard Image" />
             </Box>
           </Grid>
 

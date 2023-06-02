@@ -87,7 +87,7 @@ const ServicesView = () => {
             Dienstleistungen
           </Typography>
         </Box>
-        <Image src={MaterialWavedLine} alt="Home Illustration" width={100} height={260} className="absolute right-[15px] top-[400px]" />
+        <Image priority src={MaterialWavedLine} alt="Home Illustration" width={100} height={260} className="absolute right-[15px] top-[400px]" />
 
         <Grid container gap={10} className="d-flex flex-row justify-center " width={'100%'}>
           {map(ServicesData, (item, index) => (
@@ -105,7 +105,7 @@ const ServicesView = () => {
                 }}
               >
                 <CardContent className="h-full d-flex items-center justify-between !p-0">
-                  <Image height={190} src={item.image} alt={item.title} className="mx-auto " />
+                  <Image priority height={190} src={item.image} alt={item.title} className="mx-auto " />
                   <Box className="p-[20px]">
                     <Typography className="!mb-[10px]" gutterBottom variant="h5" color={colorPalette.blueDark} component="div" textAlign={'start'} style={text20Bold}>
                       {item.title}

@@ -67,11 +67,11 @@ const FeaturesView: React.FC<IProps> = ({}) => {
             Ihre <span style={{ color: colorPalette.blue }}> Vorteile </span> Im Überblick
           </Typography>
         </Box>
-        <Image src={MaterialPlus} alt="Home Illustration" width={150} height={170} className="absolute right-0" />
+        <Image priority src={MaterialPlus} alt="Home Illustration" width={150} height={170} className="absolute right-0" />
 
         <Grid container className="d-flex flex-row justify-center items-center " width={'100%'} height={'auto'}>
           {map(FeaturesData, (item, index) => (
-            <Grid key={index} item spacing={2} height={'100%'} className="relative group">
+            <Grid key={index} item height={'100%'} className="relative group">
               <Card
                 className="z-20"
                 sx={{
@@ -85,7 +85,7 @@ const FeaturesView: React.FC<IProps> = ({}) => {
                 }}
               >
                 <CardContent className="h-full d-flex items-center justify-between py-[20px]">
-                  <Image src={item.icon} alt={item.title} className="mx-auto py-[35px]" />
+                  <Image priority src={item.icon} alt={item.title} className="mx-auto py-[35px]" />
                   <Typography gutterBottom variant="h5" color={colorPalette.blueDark} component="div" textAlign={'center'} style={text20Bold}>
                     {item.title}
                   </Typography>

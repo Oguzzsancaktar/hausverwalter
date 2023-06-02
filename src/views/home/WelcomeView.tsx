@@ -11,7 +11,7 @@ const WelcomeView: React.FC<IProps> = () => {
   const { setShowModal } = useSubmitRentalApiContext()
 
   return (
-    <div className="min-h-screen min-w-screen  bg-welcome bg-cover bg-center flex flex-row items-center justify-start">
+    <div className="min-h-screen min-w-screen  bg-welcome bg-cover bg-start flex flex-row items-center justify-start">
       <Container maxWidth="lg" className="flex flex-row h-auto justify-between items-center medium:flex-col medium:pt-40" style={{ display: 'flex' }}>
         <Box className="flex flex-col h-auto w-auto pr-10  medium:pb-20 medium:items-center">
           <Typography
@@ -81,7 +81,7 @@ const WelcomeView: React.FC<IProps> = () => {
         </Box>
 
         <Box>
-          <Image src={IllustrationHome} alt="Home Illustration" />
+          <Image priority src={IllustrationHome} alt="Home Illustration" />
         </Box>
       </Container>
     </div>

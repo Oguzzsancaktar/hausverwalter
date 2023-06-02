@@ -29,7 +29,7 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        welcome: "url('/assets/images/shared/material-welcome-background.svg')",
+        welcome: "url('/assets/images/shared/welcome.png')",
       },
       screens: {
         small: { max: '650px' },

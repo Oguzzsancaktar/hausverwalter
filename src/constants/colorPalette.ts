@@ -20,5 +20,7 @@ export const colorPalette = Object.freeze({
   blueDark: '#012269',
   blueLight: '#EFF8FF',
 
+  red: '#8B0000',
+
   olive: '#969E03',
 })

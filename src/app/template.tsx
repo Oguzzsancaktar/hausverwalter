@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useRef } from 'react'
+import React from 'react'
 // Store.
 import { useSubmitRentalApiContext, useSubmitRentalStateContext } from '@/context'
 // Modals.
@@ -25,7 +25,9 @@ const Template: React.FC<IProps> = ({ children }) => {
       {children}
 
       <Modal open={isModalOpen} onClose={() => setShowModal(false)}>
-        <SubmitRentalModal closeModal={() => setShowModal(false)} />
+        <div>
+          <SubmitRentalModal closeModal={() => setShowModal(false)} />
+        </div>
       </Modal>
       <Footer />
     </div>

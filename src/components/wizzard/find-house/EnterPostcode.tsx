@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Button, TextField, Typography } from '@mui/material'
 import { colorPalette } from '@/constants'
+import { useSubmitRentalApiContext, useSubmitRentalStateContext } from '@/context'
 
 interface IProps {
   handleStepChange: (type: 'next' | 'prev') => void
@@ -8,18 +9,29 @@ interface IProps {
 }
 
 const EnterPostcode: React.FC<IProps> = ({ handleStepChange }) => {
-  const [postcode, setPostcode] = useState('')
+  const { postCode } = useSubmitRentalStateContext()
+  const { setPostCode } = useSubmitRentalApiContext()
+
+  const [validationError, setValidationError] = useState<boolean>(false)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target
-    setPostcode(value)
+    setPostCode(value)
   }
+
+  useEffect(() => {
+    if (postCode && postCode.toString().length > 0) {
+      setValidationError(false)
+    } else {
+      setValidationError(true)
+    }
+  }, [postCode])
 
   return (
     <Box className="h-full  flex flex-col items-center justify-between mx-auto">
       <Box>
         <Typography className="!text-purple" variant="h6" component="h2" sx={{ textAlign: 'center', color: colorPalette.purple, marginTop: '30px', marginBottom: '30px' }}>
-          Um welche Dienstleistung handelt es sich?
+          Wo befindet sich Ihre Immobilie?
         </Typography>
         <Box className="flex justify-center">
           <TextField
@@ -46,17 +58,21 @@ const EnterPostcode: React.FC<IProps> = ({ handleStepChange }) => {
                 borderLeft: 'none',
                 borderRight: 'none',
                 borderRadius: '0',
-                borderBottom: '2px solid ' + colorPalette.purple,
+                borderColor: validationError ? colorPalette.red : colorPalette.purple,
               },
             }}
-            value={postcode}
+            value={postCode || ''}
             placeholder="Postleitzahl eingeben"
           />
         </Box>
       </Box>
 
       <Box className="my-10">
-        <Button className="h-[40px] w-[130px] min-w-0 bg-blue capitalize rounded-[6px] border-2 border-blue border-solid text-white" onClick={() => handleStepChange('next')}>
+        <Button
+          disabled={validationError}
+          className="h-[40px] w-[130px] min-w-0 bg-blue capitalize rounded-[6px] border-2 border-blue border-solid text-white"
+          onClick={() => handleStepChange('next')}
+        >
           Weiter
         </Button>
       </Box>

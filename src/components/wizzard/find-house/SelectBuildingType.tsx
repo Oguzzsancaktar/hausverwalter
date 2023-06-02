@@ -21,7 +21,7 @@ const SelectBuildingType: React.FC<IProps> = ({ handleStepChange }) => {
   return (
     <Box className="flex flex-col items-center justify-center mx-auto">
       <Typography className="!text-purple" variant="h6" component="h2" sx={{ textAlign: 'center', color: colorPalette.purple, marginTop: '30px', marginBottom: '30px' }}>
-        Um welche Dienstleistung handelt es sich?
+        Um welches Gebäude handelt es sich?
       </Typography>
 
       <Box className="flex flex-col items-center justify-center mx-auto max-w-[300px]">

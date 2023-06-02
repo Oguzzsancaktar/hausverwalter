@@ -15,16 +15,16 @@ enum EReducerActionKind {
 
 interface IReducerAction {
   type: EReducerActionKind
-  payload?: number | boolean | IRentalFeatures | IPersonalData
+  payload?: number | boolean | string | IRentalFeatures | IPersonalData
 }
 
-interface ISubmitRentalState {
+export interface ISubmitRentalState {
   isModalOpen: boolean
   serviceType: number | null
   buildingType: number | null
   features: IRentalFeatures
   administrationTime: number | null
-  postCode: number | null
+  postCode: string | null
   personalData: IPersonalData
 }
 
@@ -45,7 +45,7 @@ interface ISubmitRentalApi {
   setBuildingType: (buildingType: number) => void
   setFeatures: (features: IRentalFeatures) => void
   setAdministrationTime: (administrationTime: number) => void
-  setPostCode: (postCode: number) => void
+  setPostCode: (postCode: string) => void
   setPersonalData: (personalData: IPersonalData) => void
   reset: () => void
 }
@@ -133,7 +133,7 @@ const reducer = (state: ISubmitRentalState, action: IReducerAction): ISubmitRent
     case EReducerActionKind.SET_POST_CODE:
       return {
         ...state,
-        postCode: payload as number,
+        postCode: payload as string,
       }
     case EReducerActionKind.SET_PERSONAL_DATA:
       return {
@@ -162,7 +162,7 @@ const SubmitRentalContextProvider: React.FC<IProps> = ({ children }) => {
       setBuildingType: (buildingType: number) => dispatch({ type: EReducerActionKind.SET_BUILDING_TYPE, payload: buildingType }),
       setFeatures: (features: IRentalFeatures) => dispatch({ type: EReducerActionKind.SET_FEATURES, payload: features }),
       setAdministrationTime: (administrationTime: number) => dispatch({ type: EReducerActionKind.SET_ADMINISTRATION_TIME, payload: administrationTime }),
-      setPostCode: (postCode: number) => dispatch({ type: EReducerActionKind.SET_POST_CODE, payload: postCode }),
+      setPostCode: (postCode: string) => dispatch({ type: EReducerActionKind.SET_POST_CODE, payload: postCode }),
       setPersonalData: (personalData: IPersonalData) => dispatch({ type: EReducerActionKind.SET_PERSONAL_DATA, payload: personalData }),
       reset: () => dispatch({ type: EReducerActionKind.RESET }),
     }
