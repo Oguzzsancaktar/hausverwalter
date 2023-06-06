@@ -26,7 +26,7 @@ const SubmitRentalWizzard: React.FC<IProps> = ({ activeStep, setActiveStep, clos
 
   return (
     <Box height={'100%'}>
-      <Box className="!h-[calc(100%-40px)]">{createElement(Sections[activeStep], { handleStepChange, closeModal })}</Box>
+      <Box className="!h-[calc(100%-40px-5rem)]">{createElement(Sections[activeStep], { handleStepChange, closeModal })}</Box>
 
       <Box className="!h-[40px]">
         <Typography sx={{ mt: 2, color: colorPalette.blueSky }}>Schritt {activeStep + 1} von 6</Typography>

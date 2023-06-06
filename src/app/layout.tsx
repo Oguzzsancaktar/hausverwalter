@@ -24,6 +24,8 @@ import { ThemeProvider, createTheme, Modal } from '@mui/material'
 // Modals.
 import { SubmitRentalModal } from '@/modals'
 import { SubmitRentalContextProvider, useSubmitRentalApiContext, useSubmitRentalStateContext } from '@/context'
+import Head from 'next/head'
+import { Metadata } from 'next'
 const theme = createTheme({
   breakpoints: {
     values: {
@@ -53,6 +55,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en">
+      <Head>
+        <title>My page title</title>
+        <meta property="og:title" content="My page title" key="title" />
+      </Head>
+      <Head>
+        <meta property="og:title" content="My new title" key="title" />
+      </Head>
+
       <body suppressHydrationWarning={true}>
         <ThemeProvider theme={theme}>
           <SubmitRentalContextProvider>{children}</SubmitRentalContextProvider>

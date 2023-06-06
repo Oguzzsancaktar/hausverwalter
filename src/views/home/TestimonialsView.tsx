@@ -1,9 +1,8 @@
 'use client'
 import React from 'react'
-import { Box, Button, Container, Grid, Typography } from '@mui/material'
-import { WizzardImage, colorPalette, text17Medium, text18Medium, text40SemiBold50, text50Bold } from '@/constants'
-import Image from 'next/image'
-import { CarouselDots, ExplainationWizzard, TestimonialsCarousel } from '@/components'
+import { Box, Container, Typography } from '@mui/material'
+import { colorPalette, text18Medium, text50Bold } from '@/constants'
+import { CarouselDots, TestimonialsCarousel } from '@/components'
 
 const TestimonialsData = [
   {
@@ -69,7 +68,7 @@ const TestimonialsView: React.FC<IProps> = ({}) => {
           <Typography
             variant="h3"
             component="p"
-            className="my-5"
+            className="my-5 small:!text-xl"
             sx={{
               ...text50Bold,
               maxWidth: '400px',

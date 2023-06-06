@@ -31,7 +31,7 @@ const EnterFeatures: React.FC<IProps> = ({ handleStepChange }) => {
       return
     }
 
-    setFeatures({ ...temp, [field]: type === 'increase' ? temp[field] + 1 : temp[field] - 1 })
+    setFeatures({ ...temp, [field]: type === 'increase' ? +temp[field] + 1 : +temp[field] - 1 })
   }
 
   const validateFields = () => {

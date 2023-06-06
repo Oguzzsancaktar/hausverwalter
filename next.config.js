@@ -1,7 +1,11 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
   experimental: { appDir: true },
+  output: 'export',
+  publicRuntimeConfig: {
+    staticFolder: '/public',
+  },
+  optimizedImages: {
+    optimizeImages: false,
+  },
 }
-
-module.exports = nextConfig

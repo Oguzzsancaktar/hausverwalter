@@ -18,6 +18,7 @@ import {
 import { Box, Card, CardContent, Container, Grid, Typography } from '@mui/material'
 import Image from 'next/image'
 import { map } from 'lodash'
+import { loaderProp } from '@/utils'
 
 const ServicesData = [
   {
@@ -83,11 +84,12 @@ const ServicesView = () => {
               color: colorPalette.purple,
               textAlign: 'center',
             }}
+            className="medium:text-3xl"
           >
             Dienstleistungen
           </Typography>
         </Box>
-        <Image priority src={MaterialWavedLine} alt="Home Illustration" width={100} height={260} className="absolute right-[15px] top-[400px]" />
+        <Image priority src={MaterialWavedLine} alt="Home Illustration" width={100} height={260} className="absolute right-[15px] top-[400px]" loader={loaderProp} />
 
         <Grid container gap={10} className="d-flex flex-row justify-center " width={'100%'}>
           {map(ServicesData, (item, index) => (
@@ -105,7 +107,7 @@ const ServicesView = () => {
                 }}
               >
                 <CardContent className="h-full d-flex items-center justify-between !p-0">
-                  <Image priority height={190} src={item.image} alt={item.title} className="mx-auto " />
+                  <Image src={item.image} alt={item.title} className="mx-auto " width={320} height={190} loader={loaderProp} />
                   <Box className="p-[20px]">
                     <Typography className="!mb-[10px]" gutterBottom variant="h5" color={colorPalette.blueDark} component="div" textAlign={'start'} style={text20Bold}>
                       {item.title}

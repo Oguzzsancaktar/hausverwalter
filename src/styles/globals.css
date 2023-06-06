@@ -59,5 +59,13 @@ body {
  font-family: "Poppins",sans-serif;
 }
 
+main{
+  overflow-x: hidden;
+}
 
 
+
+
+.swal2-confirm.swal2-styled{
+  background-color: rgb(1, 121, 192);
+}

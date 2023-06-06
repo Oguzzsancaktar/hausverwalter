@@ -2,6 +2,7 @@ import React from 'react'
 import { LogoHausverwalter, svgIcons, text16Medium17, text18Medium22, text21Bold } from '@/constants'
 import { map } from 'lodash'
 import Image from 'next/image'
+import { loaderProp } from '@/utils'
 
 const SocialMediaData = [
   {
@@ -29,7 +30,7 @@ const Footer = () => {
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 medium:py-8 ">
         <div className="flex justify-between mb-5 medium:flex-col ">
           <div className="mb-6 md:mb-0 pr-5  medium:pb-10 medium:pr-0 ">
-            <Image priority src={LogoHausverwalter} alt="Hausverwalter Logo" className="medium:mx-auto" />
+            <Image priority src={LogoHausverwalter} alt="Hausverwalter Logo" className="medium:mx-auto" loader={loaderProp} />
           </div>
           <div className="flex  gap-8 medium:gap-6 medium:grid-cols-3 medium:flex medium:items-center medium:justify-center small:flex-col">
             {map(FooterData, (item, index) => (

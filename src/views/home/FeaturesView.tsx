@@ -6,6 +6,7 @@ import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Container, G
 import Image from 'next/image'
 import { map } from 'lodash'
 import { useSubmitRentalApiContext } from '@/context'
+import { loaderProp } from '@/utils'
 
 const FeaturesData = [
   {
@@ -67,7 +68,7 @@ const FeaturesView: React.FC<IProps> = ({}) => {
             Ihre <span style={{ color: colorPalette.blue }}> Vorteile </span> Im Überblick
           </Typography>
         </Box>
-        <Image priority src={MaterialPlus} alt="Home Illustration" width={150} height={170} className="absolute right-0" />
+        <Image priority src={MaterialPlus} alt="Home Illustration" width={150} height={170} className="absolute right-0" loader={loaderProp} />
 
         <Grid container className="d-flex flex-row justify-center items-center " width={'100%'} height={'auto'}>
           {map(FeaturesData, (item, index) => (
@@ -85,7 +86,7 @@ const FeaturesView: React.FC<IProps> = ({}) => {
                 }}
               >
                 <CardContent className="h-full d-flex items-center justify-between py-[20px]">
-                  <Image priority src={item.icon} alt={item.title} className="mx-auto py-[35px]" />
+                  <Image priority src={item.icon} alt={item.title} className="mx-auto py-[35px]" loader={loaderProp} />
                   <Typography gutterBottom variant="h5" color={colorPalette.blueDark} component="div" textAlign={'center'} style={text20Bold}>
                     {item.title}
                   </Typography>

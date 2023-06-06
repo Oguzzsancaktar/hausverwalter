@@ -15,6 +15,7 @@ import MenuItem from '@mui/material/MenuItem'
 import Image from 'next/image'
 import { LogoHausverwalter, colorPalette, svgIcons, text17Medium } from '@/constants'
 import { useSubmitRentalApiContext } from '@/context'
+import { loaderProp } from '@/utils'
 
 interface IProps {}
 
@@ -68,7 +69,7 @@ const Navbar: React.FC<IProps> = () => {
     >
       <Container maxWidth="lg">
         <Toolbar disableGutters style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Image priority width={203} height={56} src={LogoHausverwalter} alt="Hausverwalter Logo" />
+          <Image priority width={203} height={56} src={LogoHausverwalter} alt="Hausverwalter Logo" loader={loaderProp} />
 
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
             <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
@@ -94,7 +95,7 @@ const Navbar: React.FC<IProps> = () => {
               ))}
             </Box>
 
-            <Button color="inherit" style={{ backgroundColor: colorPalette.blue, height: 40, width: 180 }} onClick={() => setShowModal(true)}>
+            <Button className="medium:hidden" color="inherit" style={{ backgroundColor: colorPalette.blue, height: 40, width: 180 }} onClick={() => setShowModal(true)}>
               <Typography
                 variant="h3"
                 noWrap
@@ -111,13 +112,6 @@ const Navbar: React.FC<IProps> = () => {
                 Angebot einholen
               </Typography>
             </Button>
-
-            <Tooltip title="Open settings">
-              <IconButton className="ml-2" style={text17Medium} onClick={handleOpenUserMenu} sx={{ p: 0, color: colorPalette.black2 }}>
-                DE
-                <Image priority className="ml-[3px]" src={svgIcons.chevronDown} alt="chevron down" width={10} height={10} />
-              </IconButton>
-            </Tooltip>
 
             <Box sx={{ width: 'auto', display: { xs: 'flex', md: 'none' } }}>
               <IconButton size="large" aria-label="account of current user" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleOpenNavMenu} color="inherit">
@@ -170,6 +164,15 @@ const Navbar: React.FC<IProps> = () => {
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
+
+              {/* <MenuItem>
+                <Tooltip title="Open settings">
+                  <IconButton className="ml-2" style={text17Medium} onClick={handleOpenUserMenu} sx={{ p: 0, color: colorPalette.black2 }}>
+                    DE
+                    <Image priority className="ml-[3px]" src={svgIcons.chevronDown} alt="chevron down" width={10} height={10} loader={loaderProp} />
+                  </IconButton>
+                </Tooltip>
+              </MenuItem> */}
             </Menu>
           </Box>
         </Toolbar>

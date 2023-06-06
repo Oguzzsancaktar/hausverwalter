@@ -5,6 +5,7 @@ import { WizzardImage, colorPalette, text17Medium, text18Medium, text40SemiBold5
 import Image from 'next/image'
 import { ExplainationWizzard } from '@/components'
 import { useSubmitRentalApiContext } from '@/context'
+import { loaderProp } from '@/utils'
 
 interface IProps {}
 const WizzardView: React.FC<IProps> = () => {
@@ -32,7 +33,7 @@ const WizzardView: React.FC<IProps> = () => {
           <Typography
             variant="h3"
             component="p"
-            className="my-5 medium:text-center medium:mx-auto"
+            className="my-5 medium:text-center medium:mx-auto small:!text-lg"
             sx={{
               ...text40SemiBold50,
               maxWidth: '550px',
@@ -49,7 +50,7 @@ const WizzardView: React.FC<IProps> = () => {
         <Grid container className="flex flex-row items-center">
           <Grid item xs={12} md={6} lg={4} className="mr-[100px] medium:mx-auto medium:mb-20">
             <Box className="flex flex-col items-center justify-center p-5 bg-white rounded-3xl shadow-lg">
-              <Image priority src={WizzardImage} alt="Wizzard Image" />
+              <Image src={WizzardImage} alt="Wizzard Image" loader={loaderProp} width={600} height={300} />
             </Box>
           </Grid>
 

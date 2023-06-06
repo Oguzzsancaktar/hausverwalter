@@ -3,6 +3,7 @@ import { Box, Button, Checkbox, TextField, Typography } from '@mui/material'
 import { EAdministrationTypes, EBuildingTypes, EServices, colorPalette, text11Medium17 } from '@/constants'
 import { ISubmitRentalState, useSubmitRentalApiContext, useSubmitRentalStateContext } from '@/context'
 import axiosInstance from '@/config/axios.instance'
+import Swal from 'sweetalert2'
 
 interface IProps {
   handleStepChange: (type: 'next' | 'prev') => void
@@ -118,6 +119,7 @@ const EnterPersonalData: React.FC<IProps> = ({ closeModal, handleStepChange }) =
 
       try {
         axiosInstance(options).then((res) => {
+          Swal.fire('Ihre Anfrage wurde erfolgreich bearbeitet', 'Wir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen', 'success')
           reset()
         })
       } catch (error) {
@@ -132,8 +134,8 @@ const EnterPersonalData: React.FC<IProps> = ({ closeModal, handleStepChange }) =
 
   return (
     <Box className="h-full  flex flex-col items-center justify-between mx-auto">
-      <Box>
-        <Typography className="!text-purple" variant="h6" component="h2" sx={{ textAlign: 'center', color: colorPalette.purple, marginTop: '30px', marginBottom: '30px' }}>
+      <Box className="px-10">
+        <Typography className="!text-purple" variant="h6" component="h2" sx={{ textAlign: 'center', color: colorPalette.purple, marginTop: '30px', marginBottom: '30px', px: '15px' }}>
           Perfekt! Es stehen mehrere Dienstleister zur Auswahl.
         </Typography>
         <Box className="flex justify-center  max-w-[400px] mx-auto">
@@ -143,7 +145,9 @@ const EnterPersonalData: React.FC<IProps> = ({ closeModal, handleStepChange }) =
             type="text"
             size="small"
             sx={{
-              width: '400px',
+              px: '15px',
+              width: '100%',
+              maxWidth: '400px',
               '& .MuiInputBase-root': {
                 height: '40px',
                 border: 'none',
@@ -168,8 +172,10 @@ const EnterPersonalData: React.FC<IProps> = ({ closeModal, handleStepChange }) =
             type="text"
             size="small"
             sx={{
+              px: '15px',
+              width: '100%',
+              maxWidth: '400px',
               marginTop: '15px',
-              width: '400px',
               '& .MuiInputBase-root': {
                 height: '40px',
                 border: 'none',
@@ -194,6 +200,7 @@ const EnterPersonalData: React.FC<IProps> = ({ closeModal, handleStepChange }) =
             type="text"
             size="small"
             sx={{
+              px: '15px',
               marginTop: '15px',
               width: '400px',
               '& .MuiInputBase-root': {
@@ -220,6 +227,7 @@ const EnterPersonalData: React.FC<IProps> = ({ closeModal, handleStepChange }) =
             type="text"
             size="small"
             sx={{
+              px: '15px',
               marginTop: '15px',
               width: '400px',
               '& .MuiInputBase-root': {
@@ -238,7 +246,7 @@ const EnterPersonalData: React.FC<IProps> = ({ closeModal, handleStepChange }) =
           />
         </Box>
 
-        <Box className="mt-[15px] m-0 mx-auto max-w-[400px] flex flex-row h-auto">
+        <Box className="mt-[15px] m-0 mx-auto max-w-[400px] flex flex-row h-auto px-[15px]">
           <Checkbox
             onChange={(x) => setValidationErrors((prev) => ({ ...prev, checkbox: !x.target.checked }))}
             className="mr-[5px]"

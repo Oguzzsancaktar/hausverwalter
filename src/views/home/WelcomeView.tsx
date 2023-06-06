@@ -5,6 +5,7 @@ import { IllustrationHome, colorPalette, text17Medium, text18Medium, text20Bold,
 import { Box, Button, Container, Typography } from '@mui/material'
 import Image from 'next/image'
 import { useSubmitRentalApiContext } from '@/context'
+import { loaderProp } from '@/utils'
 
 interface IProps {}
 const WelcomeView: React.FC<IProps> = () => {
@@ -13,11 +14,11 @@ const WelcomeView: React.FC<IProps> = () => {
   return (
     <div className="min-h-screen min-w-screen  bg-welcome bg-cover bg-start flex flex-row items-center justify-start">
       <Container maxWidth="lg" className="flex flex-row h-auto justify-between items-center medium:flex-col medium:pt-40" style={{ display: 'flex' }}>
-        <Box className="flex flex-col h-auto w-auto pr-10  medium:pb-20 medium:items-center">
+        <Box className="flex flex-col h-auto w-auto pr-10 medium:pr-0  medium:pb-20 medium:items-center">
           <Typography
             variant="h5"
             component={'h5'}
-            className="medium:text-center"
+            className="medium:text-center medium:text-lg"
             noWrap
             sx={{
               ...text20Bold,
@@ -40,7 +41,7 @@ const WelcomeView: React.FC<IProps> = () => {
               flexGrow: 1,
               color: colorPalette.purple,
             }}
-            className="medium:text-5xl medium:text-center"
+            className=" medium:text-5xl medium:text-center small:!text-xl"
           >
             Wir verbinden Sie mit den Richtigen Hausverwaltern.
           </Typography>
@@ -81,7 +82,7 @@ const WelcomeView: React.FC<IProps> = () => {
         </Box>
 
         <Box>
-          <Image priority src={IllustrationHome} alt="Home Illustration" />
+          <Image priority src={IllustrationHome} alt="Home Illustration" loader={loaderProp} />
         </Box>
       </Container>
     </div>

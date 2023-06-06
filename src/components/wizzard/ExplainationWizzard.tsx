@@ -43,11 +43,12 @@ const ExplainationWizzard = () => {
             {index + 1 !== StepsData.length && <span className="w-[50px] h-[1px] border-dotted border-b-0 border-r-0 border-l-0 border-t-2  border-purple3 absolute top-1/2 right-[-60px]"></span>}
 
             <Button
+              disableRipple
               onClick={() => setSelectedStep(index)}
               sx={text20Bold}
               className={
                 'flex items-center justify-center rounded-2xl cursor-pointer w-[50px] h-[50px] ' +
-                (selectedStep === index ? 'bg-blue text-white' : 'bg-white1 text-purple3 border-purple3 border-2 border-solid')
+                (selectedStep === index ? '!bg-blue !text-white' : '!bg-white1 !text-purple3 !border-purple3 !border-2 !border-solid')
               }
             >
               {index + 1}.

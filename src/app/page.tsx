@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic'
 
 import { CacheProvider } from '@emotion/react'
 import createEmotionCache from '@/utils/createEmotionCache'
+import Head from 'next/head'
 
 const clientSideEmotionCache = createEmotionCache()
 
@@ -17,8 +18,16 @@ const ServicesView = dynamic(() => import('../views/home/ServicesView'), { ssr: 
 interface IProps {}
 
 export default function Home({ emotionCache = clientSideEmotionCache }: any) {
+  React.useEffect(() => {
+    document.title = 'Hausverwalter'
+  }, [])
   return (
     <CacheProvider value={emotionCache}>
+      <Head>
+        <title>My page title</title>
+        <meta property="og:title" content="My page title" key="title" />
+      </Head>
+
       <main>
         <WelcomeView />
         <FeaturesView />
