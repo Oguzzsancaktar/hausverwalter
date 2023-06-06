@@ -123,7 +123,7 @@ const ContactView = () => {
     validateFields()
   }, [contactData])
   return (
-    <div className="py-10 px-10 min-w-screen bg-white1 flex-row items-center justify-center pb-20">
+    <div id="über-uns" className="py-10 px-10 min-w-screen bg-white1 flex-row items-center justify-center pb-20">
       <Container
         maxWidth="lg"
         className="py-[50px] px-[150px] medium:p-5 flex flex-col h-auto justify-between items-center relative bg-blueLight  rounded-tl-[100px] rounded-br-[40px] "

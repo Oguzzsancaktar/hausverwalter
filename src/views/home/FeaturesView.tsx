@@ -35,7 +35,7 @@ const FeaturesView: React.FC<IProps> = ({}) => {
   const { setShowModal } = useSubmitRentalApiContext()
 
   return (
-    <div className=" min-w-screen bg-white1  bg-cover bg-center flex flex-row items-center justify-start">
+    <div id="ratgeber" className=" min-w-screen bg-white1  bg-cover bg-center flex flex-row items-center justify-start">
       <Container maxWidth="lg" className="flex flex-col h-auto justify-between items-center relative" style={{ display: 'flex' }}>
         <Box className="flex flex-col h-auto w-auto justify-center items-center mx-auto py-[100px]">
           <Typography

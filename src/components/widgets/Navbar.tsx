@@ -10,12 +10,12 @@ import Menu from '@mui/material/Menu'
 import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
-import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import Image from 'next/image'
 import { LogoHausverwalter, colorPalette, svgIcons, text17Medium } from '@/constants'
 import { useSubmitRentalApiContext } from '@/context'
-import { loaderProp } from '@/utils'
+import { loaderProp, scrollToEl } from '@/utils'
+import { useEffect } from 'react'
 
 interface IProps {}
 
@@ -44,7 +44,16 @@ const Navbar: React.FC<IProps> = () => {
     setAnchorElUser(null)
   }
 
-  React.useEffect(() => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault()
+    const target = e.currentTarget.innerText.toLowerCase().replace(' ', '-')
+    const element = document.getElementById(target)
+    if (element) {
+      scrollToEl(element)
+    }
+  }
+
+  useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
       if (currentScrollY > 0) {
@@ -74,7 +83,7 @@ const Navbar: React.FC<IProps> = () => {
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
             <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page) => (
-                <Button key={page} onClick={handleCloseNavMenu} sx={{ mr: '20px', color: colorPalette.black2, display: 'block' }}>
+                <Button key={page} onClick={handleLinkClick} sx={{ mr: '20px', color: colorPalette.black2, display: 'block' }}>
                   <Typography
                     variant="h3"
                     noWrap
