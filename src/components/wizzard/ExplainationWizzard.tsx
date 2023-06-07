@@ -5,31 +5,45 @@ import { Box, Button, Grid, Typography } from '@mui/material'
 import { map } from 'lodash'
 import { colorPalette, text16Medium, text20Bold } from '@/constants'
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const StepsData = [
   {
-    title: '1. Ihre Kontakt Aufnahme',
+    title: '1. Ihre Kontaktaufnahme',
     description:
-      'Im Rahmen eines persönlichen Telefongesprächs oder Videocalls können Sie als Hauseigentümer unsere vorgeschlagenen Hausverwalter und Experten kennenlernen. Bei Bedarf ist auch ein persönliches Kennenlernen vor Ort möglich, um eine optimale Betreuung und Zusammenarbeit zu gewährleisten.',
+      'Kontaktieren Sie unser Team über unser Online-Formular oder telefonisch. Basierend auf den von Ihnen bereitgestellten Informationen können wir einschätzen, welcher unserer Partner-Hausverwalter für Ihre Anforderungen geeignet ist.',
   },
   {
-    title: '2. Ihre Anfrage',
+    title: '2. Kostenloses Erstgespräch',
     description:
-      'Sie erhalten nach einem Erstgespräch ein zeitnahes Angebot. Dieses Angebot beinhaltet die Leistungen, die Sie für Ihre Immobilie benötigen. Sie können sich dann in Ruhe entscheiden, ob Sie mit uns zusammenarbeiten möchten. Wir freuen uns auf Sie!',
+      'Nach einer eingehenden telefonischen Besprechung Ihrer Anforderungen und Erwartungen an die Hausverwaltung, vermitteln wir Ihnen einen passenden Hausverwalter aus unserem Netzwerk, der Kapazitäten für Ihr Objekt hat. Unser Ziel ist Ihre Zufriedenheit mit unserem Service.',
   },
   {
-    title: '3. Ihre Entscheidung',
+    title: '3. Kostenlose Beratung durch einen Hausverwalter',
     description:
-      'Sie e erhalten nach einem Erstgespräch ein zeitnahes Angebot. Dieses Angebot beinhaltet die Leistungen, die Sie für Ihre Immobilie benötigen. Sie können sich dann in Ruhe entscheiden, ob Sie mit uns zusammenarbeiten möchten. Wir freuen uns auf Sie!',
+      'Im Rahmen eines persönlichen Telefongesprächs oder Videocalls können Sie als Hauseigentümer unseren vorgeschlagenen Hausverwalter oder Experten kennenlernen. Nutzen Sie diese Möglichkeit, um sicherzustellen, dass Sie den passenden Fachmann an Ihrer Seite haben. Bei Bedarf ist auch ein persönliches Kennenlernen vor Ort möglich, um eine optimale Betreuung und Zusammenarbeit zu gewährleisten. Wir legen Wert auf Professionalität und eine persönliche Beziehung zu unseren Kunden, um eine effektive und transparente Verwaltung Ihrer Immobilie sicherzustellen.',
   },
   {
-    title: '4. Ihre Entscheidung',
+    title: '4. Individual-Angebot',
     description:
-      ' Dieses Angebot beinhaltet die Leistungen, die Sie für Ihre Immobilie benötigen. Sie können sich dann in Ruhe entscheiden, ob Sie mit uns zusammenarbeiten möchten. Wir freuen uns auf Sie!',
+      'Sind Sie mit unserer und der Beratung unseres Partners zufrieden, stellen wir Ihnen ein maßgeschneidertes Angebot zusammen. Bei einer Angebotsbesprechung haben Sie die Möglichkeit, offene Fragen zu klären und weitere Einzelheiten zu besprechen.',
   },
   {
-    title: '5. Ihre Entscheidung',
+    title: '5. Beauftragung',
     description:
-      'Sie erhalten nach einem Erstgespräch ein zeitnahes Angebot. Dieses Angebot beinhaltet die Leistungen, die Sie für Ihre Immobilie benötigen. Sie können sich dann in Ruhe entscheiden, ob Sie mit uns !',
+      'Wenn Sie mit dem Angebot zufrieden sind, können Sie unseren Dienstleistungspartner offiziell beauftragen. Dadurch sichern Sie sich verbindlich die Kapazitäten unseres Partnerunternehmens für eine professionelle Dienstleistung Ihrer Wahl.',
   },
 ]
 const ExplainationWizzard = () => {

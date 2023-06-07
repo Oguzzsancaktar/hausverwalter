@@ -4,27 +4,34 @@ import { Box, Container, Typography } from '@mui/material'
 import { colorPalette, text18Medium, text50Bold } from '@/constants'
 import { CarouselDots, TestimonialsCarousel } from '@/components'
 
+
+
+
+
+
+
+
 const TestimonialsData = [
   {
-    description: '„Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.',
-    name: 'Max Mustermann',
+    description: 'Der Prozess war einfach und unkompliziert. Innerhalb kürzester Zeit wurde mir ein erfahrener Hausverwalter vermittelt, der sich um alle Belange meiner Immobilie kümmert. Ich bin äußerst zufrieden mit dem Service. ',
+    name: '- Julian B.',
     position: 'Immobilieninvestor',
   },
   {
-    description: 'There is beauty in simplicity. The best way to show someone how to do something is to do it for them.',
-    name: 'Alex Smith',
+    description: 'Die Kommunikation war freundlich und professionell. Das Team hat meine Anforderungen genau verstanden und mir einen passenden Hausverwalter vermittelt. Jetzt kann ich mich entspannt zurücklehnen, denn mein Haus ist in guten Händen. Vielen Dank!',
+    name: '- Granit A.',
     position: 'Business Owner',
   },
   {
-    description: 'There is beauty in simplicity. The best way to show someone how to do something is to do it for them.',
-    name: 'Bruno Mars',
+    description: 'Ich bin sehr zufrieden mit dem Hausmeister, den das Team von DieHausverwalter24 mir vermittelt haben. Er hat sich als äußerst zuverlässig erwiesen und kümmert sich hervorragend um die Instandhaltung meiner Immobilie.',
+    name: '- Alina S.',
     position: 'Musician',
   },
 ]
 
-interface IProps {}
+interface IProps { }
 
-const TestimonialsView: React.FC<IProps> = ({}) => {
+const TestimonialsView: React.FC<IProps> = ({ }) => {
   const [activeStep, setActiveStep] = React.useState(0)
 
   const handleStepChange = (index: number) => {

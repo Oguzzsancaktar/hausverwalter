@@ -17,13 +17,13 @@ import { useSubmitRentalApiContext } from '@/context'
 import { loaderProp, scrollToEl } from '@/utils'
 import { useEffect } from 'react'
 
-interface IProps {}
+interface IProps { }
 
 const Navbar: React.FC<IProps> = () => {
   const { setShowModal } = useSubmitRentalApiContext()
   const [navbarBgShow, setNavbarBgShow] = React.useState(false)
 
-  const pages = ['Startseite', 'Ratgeber', 'Partner', 'Über uns']
+  const pages = ['Vorteile', 'Dienstleistungen', 'Partner werden']
   const settings = ['EN', 'TR', 'FR', 'ES']
 
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
@@ -44,12 +44,21 @@ const Navbar: React.FC<IProps> = () => {
     setAnchorElUser(null)
   }
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLElement>) => {
-    e.preventDefault()
-    const target = e.currentTarget.innerText.toLowerCase().replace(' ', '-')
-    const element = document.getElementById(target)
-    if (element) {
-      scrollToEl(element)
+  const handleLinkClick = (e: React.MouseEvent<HTMLElement> | string) => {
+    if (typeof e === 'string') {
+      const target = e.toLowerCase().replace(' ', '-')
+      const element = document.getElementById(target)
+      if (element) {
+        scrollToEl(element)
+      }
+    } else {
+
+      e.preventDefault()
+      const target = e.currentTarget.innerText.toLowerCase().replace(' ', '-')
+      const element = document.getElementById(target)
+      if (element) {
+        scrollToEl(element)
+      }
     }
   }
 
@@ -78,7 +87,7 @@ const Navbar: React.FC<IProps> = () => {
     >
       <Container maxWidth="lg">
         <Toolbar disableGutters style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Image priority width={203} height={56} src={LogoHausverwalter} alt="Hausverwalter Logo" loader={loaderProp} />
+          <Image priority width={203} height={56} src={LogoHausverwalter} alt="Hausverwalter Logo" loader={loaderProp} onClick={() => handleLinkClick("startseite")} />
 
           <Box sx={{ flexGrow: 0, display: 'flex', alignItems: 'center' }}>
             <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
@@ -145,7 +154,7 @@ const Navbar: React.FC<IProps> = () => {
                 }}
               >
                 {pages.map((page) => (
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <MenuItem key={page} onClick={() => handleLinkClick(page)}>
                     <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
                 ))}

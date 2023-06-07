@@ -13,15 +13,15 @@ const SocialMediaData = [
 const FooterData = [
   {
     title: 'Unsere Firma',
-    links: ['Über Uns', 'Partner werden', 'Impressum'],
+    links: ['Partner werden', 'Partner werden', 'Impressum'],
   },
   {
     title: 'Kontakt',
-    links: ['FAQ', 'Formulare', 'Partner'],
+    links: ['FAQ', 'Formulare', 'Dienstleistungen'],
   },
   {
     title: 'Mehr',
-    links: ['Blog', 'Ratgeber', 'Videos'],
+    links: ['Blog', 'Vorteile', 'Videos'],
   },
 ]
 const Footer = () => {
