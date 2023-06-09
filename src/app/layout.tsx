@@ -44,7 +44,7 @@ const theme = createTheme({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const script = document.createElement('script')
-    script.src = 'https://embed.tawk.to/647720a674285f0ec46eb197/1h1olf2se'
+    script.src = 'https://embed.tawk.to/6482e83694cf5d49dc5caea5/1h2flm5d6'
     script.async = true
     document.head.appendChild(script)
 

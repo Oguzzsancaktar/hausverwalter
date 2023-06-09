@@ -7,7 +7,7 @@ interface IProps {
 }
 const CarouselDots: React.FC<IProps> = ({ activeIndex, onDotClick, size }) => {
   return (
-    <div className="flex flex-row items-center justify-start">
+    <div className="flex flex-row items-center justify-start medium:justify-center">
       {Array.from(Array(size).keys()).map((index) => (
         <div
           key={index}

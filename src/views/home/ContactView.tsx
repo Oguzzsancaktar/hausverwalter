@@ -76,6 +76,12 @@ const ContactView = () => {
   const handleSubmit = async () => {
     const result = validateFields()
 
+    setContactData({
+      fullname: '',
+      subject: '',
+      email: '',
+    })
+
     if (result) {
       const dto = {
         fullname: contactData.fullname,
@@ -107,11 +113,7 @@ const ContactView = () => {
       try {
         axiosInstance(options).then((res) => {
           Swal.fire('Ihre Anfrage wurde erfolgreich bearbeitet', 'Wir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen', 'success')
-          setContactData({
-            fullname: '',
-            subject: '',
-            email: '',
-          })
+
         })
       } catch (error) {
         console.error('E-posta gönderilirken hata oluştuuu:', error)

@@ -13,6 +13,7 @@ interface IProps {
 const EnterPersonalData: React.FC<IProps> = ({ closeModal, handleStepChange }) => {
   const { personalData, administrationTime, buildingType, features, postCode, serviceType } = useSubmitRentalStateContext()
   const { setPersonalData, reset } = useSubmitRentalApiContext()
+  const [isLoading, setIsLoading] = useState<boolean>(false)
 
   const [validationErrors, setValidationErrors] = useState({
     firstName: false,
@@ -22,7 +23,7 @@ const EnterPersonalData: React.FC<IProps> = ({ closeModal, handleStepChange }) =
   })
 
   const isButtonDisabled = useMemo(() => {
-    return validationErrors.firstName || validationErrors.lastName || validationErrors.email || validationErrors.checkbox
+    return validationErrors.firstName || validationErrors.lastName || validationErrors.email || validationErrors.checkbox || isLoading
   }, [validationErrors])
 
   const validateFields = () => {
@@ -76,6 +77,7 @@ const EnterPersonalData: React.FC<IProps> = ({ closeModal, handleStepChange }) =
 
   const handleSubmit = async () => {
     const result = validateFields()
+    setIsLoading(true)
 
     if (closeModal && result) {
       const dto: Omit<ISubmitRentalState, 'isModalOpen'> = {
@@ -120,6 +122,7 @@ const EnterPersonalData: React.FC<IProps> = ({ closeModal, handleStepChange }) =
       try {
         axiosInstance(options).then((res) => {
           Swal.fire('Ihre Anfrage wurde erfolgreich bearbeitet', 'Wir werden uns so schnell wie möglich mit Ihnen in Verbindung setzen', 'success')
+          setIsLoading(false)
           reset()
         })
       } catch (error) {

@@ -59,6 +59,7 @@ const TestimonialsView: React.FC<IProps> = ({ }) => {
       <Container maxWidth="lg" className="flex flex-row h-auto relative  justify-between medium:flex-col" style={{ display: 'flex' }}>
         <Box className="pt-[30px] medium:pb-6">
           <Typography
+            className='medium:text-center'
             variant="h3"
             component="p"
             sx={{
@@ -75,7 +76,7 @@ const TestimonialsView: React.FC<IProps> = ({ }) => {
           <Typography
             variant="h3"
             component="p"
-            className="my-5 small:!text-xl"
+            className="my-5 small:!text-xl medium:text-center"
             sx={{
               ...text50Bold,
               maxWidth: '400px',

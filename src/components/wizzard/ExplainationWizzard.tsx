@@ -75,7 +75,7 @@ const ExplainationWizzard = () => {
         <Typography
           variant="h2"
           component="p"
-          className="my-5 max-w-[500px] medium:max-w-none"
+          className="my-5 max-w-[500px] medium:max-w-none medium:text-center"
           sx={{
             ...text16Medium,
             flexGrow: 1,
